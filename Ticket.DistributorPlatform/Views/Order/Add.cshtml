@@ -1,0 +1,290 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>添加订单</title>
+    <link href="~/JavaScript/layui/css/layui.css" rel="stylesheet" />
+    <link href="~/Content/common.css?v=1.1" rel="stylesheet" />
+</head>
+<body>
+    <div class="layui-main-common">
+        <div style=" margin-top:15px;">
+            <form class="layui-form" action="">
+                <div class="layui-form-item">
+                    <label class="layui-form-label layui-form-label-width">游玩日期<span class="labelRed">*</span></label>
+                    <div class="layui-input-inline">
+                        <input id="validityDate" type="text" name="ValidityDate" lay-verify="required|date" readonly nameMsg="游玩日期" autocomplete="off" class="layui-input">
+                    </div>
+                    <label class="layui-form-label layui-form-label-width">下单人<span class="labelRed">*</span></label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="PlaceOrderName" lay-verify="required" nameMsg="下单人" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label layui-form-label-width">购买产品<span class="labelRed">*</span></label>
+                    <div class="layui-input-block layui-input-block-width">
+                        <fieldset class="layui-elem-field">
+                            <legend>
+                                <a id="btnSelect" class="layui-btn layui-btn-sm layui-btn-danger" lay-event="select">
+                                    <i class="layui-icon">&#xe608;</i>选择产品
+                                </a>
+                            </legend>
+                            <div class="layui-field-box">
+                                <table class="layui-hide" id="LAY_table_list" lay-filter="tableList"></table>
+                                <div class="layui-input-inline" style="margin:15px 5px; width:400px;">
+                                    总票数: <label id="totalCount">0</label> 张  &nbsp;&nbsp;&nbsp;&nbsp;
+                                    总金额: <label id="totalAmount">0.00</label> 元  (列表中数量可修改)
+                                </div>
+                            </div>
+                        </fieldset>
+
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label layui-form-label-width">取票人信息<span class="labelRed">*</span></label>
+                    <div class="layui-input-block layui-input-block-width">
+                        <input type="hidden" id="TicketItem" name="TicketItem" />
+                        <fieldset class="layui-elem-field">
+                            <legend>
+                                <a id="btnSelectGuide" class="layui-btn layui-btn-sm layui-btn-danger" lay-event="select">
+                                    <i class="layui-icon">&#xe608;</i>选择导游
+                                </a>
+                            </legend>
+                            <div class="layui-field-box">
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">姓名:</label>
+                                    <div class="layui-input-inline" style="width:170px;">
+                                        <input style="width:170px;" id="name" type="text" name="Linkman" nameMsg="姓名" lay-verify="required" class="layui-input">
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <label class="layui-form-label" style="width:40px;">电话:</label>
+                                    <div class="layui-input-inline" style="width:170px;">
+                                        <input style="width:170px; " id="mobile" type="text" name="mobile" nameMsg="电话" lay-verify="required" autocomplete="off" class="layui-input">
+                                    </div>
+                                </div>
+                                <div class="layui-inline">
+                                    <label class="layui-form-label">身份证:</label>
+                                    <div class="layui-input-inline" style="width:170px;">
+                                        <input style="width:170px; " id="idCard" type="text" name="idCard" nameMsg="身份证" lay-verify="required" autocomplete="off" class="layui-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label layui-form-label-width">备注:</label>
+                    <div class="layui-input-inline" style="width:620px; ">
+                        <textarea name="Remark" placeholder="请输入内容" class="layui-textarea" style="min-height:60px;padding-left: 30px;"></textarea>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div style="text-align:center;">
+                        <button class="layui-btn" lay-submit="action" lay-filter="action">确定</button>
+                        <a class="layui-btn layui-btn-primary" id="closeLayer">取消</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/html" id="barAction">
+        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delete">删除</a>
+    </script>
+    <script src="~/JavaScript/jquery-1.8.3.min.js"></script>
+    <script src="~/JavaScript/layui/layui.js"></script>
+    <script src="~/JavaScript/common.js"></script>
+    <script>
+        var selectTicketList = [];
+        function SelectTicketItem(data) {
+            selectTicketList = data;
+        }
+        function SelectGuide(data) {
+            $("#name").val(data.name);
+            $("#mobile").val(data.mobile);
+            $("#idCard").val(data.idCard);
+        }
+        layui.use(['table', 'element', 'form', 'laydate', 'upload'], function () {
+            var table = layui.table, form = layui.form, element = layui.element, laydate = layui.laydate, $ = layui.$;
+            initTable();
+            function initTable() {
+                //方法级渲染
+                table.render({
+                    elem: '#LAY_table_list'
+                    //, url: '/Order/ListData/'
+                    , cols: [[
+                        { field: 'ticketName', title: '产品名称', width: 160 }
+                        , { field: 'price', title: '单价(￥)', width: 90 }
+                        , { field: 'bookCount', title: '数量(人)可修改', width: 130, edit: "text" }
+                        , { field: 'totalAmount', title: '总额(￥)', width: 90 }
+                        , { title: '操作', width: 100, toolbar: '#barAction' }
+                    ]]
+                    , id: 'tableReload'
+                    , page: false
+                    , data: selectTicketList
+                });
+            }
+
+            form.verify({
+                required: function (value, item) { //value：表单的值、item：表单的DOM对象
+                    if (value == "" || value == undefined || value == null) {
+                        var errorMsg = $(item).attr("nameMsg");
+                        if (errorMsg == "" || errorMsg == undefined || errorMsg == null) {
+                            errorMsg = "必填项";
+                        }
+                        return errorMsg + "不能为空";
+                    }
+                }
+            });
+
+            var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+            //监听提交
+            form.on('submit(action)', function (data) {
+                if (selectTicketList.length <= 0) {
+                    parent.layer.msg("请选择产品", { icon: 2 });
+                    return false;
+                }
+                data.field.TicketItem = selectTicketList;
+                $.ajax({
+                    url: '/Order/AddData',
+                    data: data.field,
+                    type: 'post',
+                    dataType: "json",
+                    success: function (data, status) {
+                        if (data.success) {
+                            parent.layer.msg(data.message, { icon: 1 });
+                            parent.layer.close(index);
+                        } else {
+                            parent.layer.msg(data.message, { icon: 2 });
+                        }
+                    },
+                    beforeSend: function () {
+                        layer.load("loading");
+                    },
+                    complete: function () {
+                        layer.closeAll('loading');
+                    }
+                });
+                return false;
+            });
+
+            function Total() {
+                var totalAmount = 0, totalCount = 0;
+                for (var i = 0; i < selectTicketList.length; i++) {
+                    totalCount += selectTicketList[i].bookCount;
+                    totalAmount += selectTicketList[i].totalAmount;
+                }
+                $("#totalCount").html(totalCount);
+                $("#totalAmount").html(totalAmount);
+            }
+
+            var active = {
+                reload: function () {
+                    Total();
+                    //执行重载
+                    table.reload('tableReload', {
+                        page: {
+                            curr: 1 //重新从第 1 页开始
+                        }
+                        , page: false
+                        , data: selectTicketList
+                    });
+                }
+            };
+
+            table.on('edit(tableList)', function (obj) {
+                if (!(/(^[1-9]\d*$)/.test(obj.value))) {
+                    parent.layer.msg("请输入大于0的数字", { icon: 2 });
+                } else {
+                    if (Number(obj.value) < obj.data.min) {
+                        parent.layer.msg("起订数量必须大于" + obj.data.min, { icon: 2 });
+                    } else if (Number(obj.value) > obj.data.max) {
+                        parent.layer.msg("订购数量不能大于" + obj.data.max, { icon: 2 });
+                    } else {
+                        //同步更新缓存对应的值
+                        for (var i = 0; i < selectTicketList.length; i++) {
+                            if (selectTicketList[i].ticketId == obj.data.ticketId) {
+                                selectTicketList[i].bookCount = Number(obj.value);
+                                selectTicketList[i].totalAmount = Number(obj.value) * obj.data.price;
+                            }
+                        }
+                    }
+                }
+                active.reload();
+            });
+
+            table.on('tool(tableList)', function (obj) {
+                var data = obj.data; //获得当前行数据
+                var layEvent = obj.event;
+                if (layEvent === 'delete') {
+                    var newList = [];
+                    for (var i = 0; i < selectTicketList.length; i++) {
+                        if (selectTicketList[i].ticketId != data.ticketId) {
+                            newList.push(selectTicketList[i]);
+                        }
+                    }
+                    selectTicketList = newList;
+                    obj.del(); //删除对应行（tr）的DOM结构，并更新缓存
+                    Total();
+                }
+
+            });
+
+            $("#closeLayer").click(function () {
+                parent.layer.close(index);
+            });
+
+            $("#btnSelect").click(function () {
+                layer.open({
+                    type: 2,
+                    title: "选择产品",
+                    area: ['550px', '480px'],
+                    fixed: false,
+                    content: '/Ticket/List?PlayDate=' + $("#validityDate").val(),
+                    end: function () {
+                        initTable();
+                        active.reload();
+                    }
+                });
+            });
+            $("#btnSelectGuide").click(function () {
+                layer.open({
+                    type: 2,
+                    title: "选择导游",
+                    area: ['580px', '350px'],
+                    fixed: false,
+                    content: '/Guide/MinList',
+                    end: function () {
+                        active.reload();
+                    }
+                });
+            });
+            var playDate = Common.getNowFormatDate();
+            //日期有效范围
+            var start = laydate.render({
+                elem: '#validityDate',
+                value: playDate,
+                min: playDate,
+                done: function (value, date) {
+                    if (playDate != value) {
+                        console.log(value);
+                        selectTicketList = [];
+                        Total();
+                        initTable();
+                        active.reload();
+                    }
+                    playDate = value;
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

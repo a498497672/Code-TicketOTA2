@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5DCA27D0-AAB6-4F38-BA51-68C467433772}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ticket.SaleWebApi.Application</RootNamespace>
+    <AssemblyName>Ticket.SaleWebApi.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CtripFacadeService.cs" />
+    <Compile Include="TongChengFacadeService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebSiteInitializationFacadeService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FengjingSDK461\FengjingSDK461.csproj">
+      <Project>{D1695393-478F-4BEB-B235-A617F83A90C7}</Project>
+      <Name>FengjingSDK461</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ticket.Infrastructure.Ctrip\Ticket.Infrastructure.Ctrip.csproj">
+      <Project>{e2b73c86-74aa-4a5b-aff5-0c934a8a4ece}</Project>
+      <Name>Ticket.Infrastructure.Ctrip</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ticket.Infrastructure.TongCheng\Ticket.Infrastructure.TongCheng.csproj">
+      <Project>{9fce677c-2ca7-4aa6-bf83-96a92927a37a}</Project>
+      <Name>Ticket.Infrastructure.TongCheng</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ticket.SqlSugar\Ticket.SqlSugar.csproj">
+      <Project>{99cad451-b0fc-44e4-a1b5-bcedadd5c1d1}</Project>
+      <Name>Ticket.SqlSugar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ticket.Utility\Ticket.Utility.csproj">
+      <Project>{786EB7FC-EA4A-442E-9468-1140FC9A92CD}</Project>
+      <Name>Ticket.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

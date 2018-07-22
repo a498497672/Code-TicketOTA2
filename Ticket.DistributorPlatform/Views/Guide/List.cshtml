@@ -1,0 +1,150 @@
+﻿
+@{
+    ViewBag.Title = "导游列表";
+    Layout = "~/Views/_LayoutPage.cshtml";
+}
+
+<div class="layui-main-common">
+    <div class="layui-form-item">
+        <blockquote class="layui-elem-quote">渠道商管理  >  导游列表</blockquote>
+    </div>
+    <div class="queryTable">
+        <form class="layui-form" action="" id="queryForm">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">导游名称</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="name" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">电话</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="mobile" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">身份证号</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="idCard" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">&nbsp;</label>
+                    <a class="layui-btn" id="btnQuery"><i class="layui-icon">&#xe615;</i>搜索</a>
+                    <a class="layui-btn layui-btn-normal" id="btnAdd"><i class="layui-icon">&#xe608;</i>新增导游</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <table class="layui-hide" id="LAY_table_list" lay-filter="tableList"></table>
+</div>
+<script type="text/html" id="barAction">
+    <a class="layui-btn layui-btn-xs" lay-event="detail">修改</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delete">删除</a>
+</script>
+<script>
+    layui.use(['table', 'laydate'], function () {
+        var table = layui.table, laydate = layui.laydate;
+        //方法级渲染
+        table.render({
+            elem: '#LAY_table_list'
+            , url: '/Guide/ListData/'
+            , cols: [[
+                { field: 'id', title: '序号', width: 100 }
+                , { field: 'name', title: '导游名称', width: 150 }
+                , { field: 'mobile', title: '电话', width: 150 }
+                , { field: 'idCard', title: '身份证号', width: 200 }
+                , { field: 'businessName', title: '操作', width: 150, toolbar: '#barAction' }
+            ]]
+            , id: 'tableReload'
+            , page: true
+            , response: {
+                statusName: 'success' //数据状态的字段名称，默认：code
+                , statusCode: true //成功的状态码，默认：0
+                , msgName: 'message' //状态信息的字段名称，默认：msg
+                , countName: 'count' //数据总数的字段名称，默认：count
+                , dataName: 'data' //数据列表的字段名称，默认：data
+            }
+        });
+
+        var $ = layui.$, active = {
+            reload: function () {
+                var serializeObj = {};
+                $($("#queryForm").serializeArray()).each(function () {
+                    serializeObj[this.name] = this.value;
+                });
+                //执行重载
+                table.reload('tableReload', {
+                    page: {
+                        curr: 1 //重新从第 1 页开始
+                    }
+                    , where: serializeObj
+                });
+            }
+        };
+
+        //监听工具条 (注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值")
+        table.on('tool(tableList)', function (obj) {
+            var data = obj.data; //获得当前行数据
+            var layEvent = obj.event;
+            if (layEvent === 'detail') { //审核
+                parent.layer.open({
+                    type: 2,
+                    title: "修改",
+                    area: ['400px', '340px'],
+                    fixed: false,
+                    content: '/Guide/Update?id=' + data.id,
+                    end: function () {
+                        active.reload();
+                    }
+                });
+            } else if (layEvent === 'delete') {
+                layer.confirm('确认要删除使用吗?', function (index) {
+                    $.ajax({
+                        url: '/Guide/Delete?id=' + data.id,
+                        type: 'post',
+                        dataType: "json",
+                        success: function (data, status) {
+                            layer.close(index);
+                            if (data.success) {
+                                active.reload();
+                                parent.layer.msg(data.message, { icon: 1 });
+                            } else {
+                                parent.layer.msg(data.message, { icon: 2 });
+                            }
+                        },
+                        beforeSend: function () {
+                            layer.load("loading");
+                        },
+                        complete: function () {
+                            layer.closeAll('loading');
+                        }
+                    });
+                });
+            }
+        });
+
+        $('#btnQuery').on('click', function () {
+            active.reload();
+        });
+
+        $('#btnAdd').on('click', function () {
+            parent.layer.open({
+                type: 2,
+                title: "新增",
+                area: ['400px', '340px'],
+                fixed: false,
+                content: '/Guide/Add',
+                end: function () {
+                    active.reload();
+                }
+            });
+        });
+    });
+</script>
+

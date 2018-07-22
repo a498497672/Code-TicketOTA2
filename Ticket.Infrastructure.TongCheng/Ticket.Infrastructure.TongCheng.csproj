@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9FCE677C-2CA7-4AA6-BF83-96A92927A37A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ticket.Infrastructure.TongCheng</RootNamespace>
+    <AssemblyName>Ticket.Infrastructure.TongCheng</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Api.cs" />
+    <Compile Include="Core\ConsumeNotice.cs" />
+    <Compile Include="Lib\Helper.cs" />
+    <Compile Include="Lib\HttpService.cs" />
+    <Compile Include="Lib\Result.cs" />
+    <Compile Include="Lib\ResultCode.cs" />
+    <Compile Include="Lib\TongChengConfig.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Request\CancelOrderRequest.cs" />
+    <Compile Include="Request\ConsumeNoticeRequest.cs" />
+    <Compile Include="Request\CreateOrderRequest.cs" />
+    <Compile Include="Request\ProductRequest.cs" />
+    <Compile Include="Request\QueryOrderRequest.cs" />
+    <Compile Include="Request\RequestData.cs" />
+    <Compile Include="Request\RequestHead.cs" />
+    <Compile Include="Response\CancelOrderResponse.cs" />
+    <Compile Include="Response\ConsumeNoticeResponse.cs" />
+    <Compile Include="Response\CreateOrderResponse.cs" />
+    <Compile Include="Response\ProductResponse.cs" />
+    <Compile Include="Response\QueryOrderResponse.cs" />
+    <Compile Include="Response\ResponseData.cs" />
+    <Compile Include="Response\ResponseHead.cs" />
+    <Compile Include="TongChengGateway.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ticket.Utility\Ticket.Utility.csproj">
+      <Project>{786eb7fc-ea4a-442e-9468-1140fc9a92cd}</Project>
+      <Name>Ticket.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

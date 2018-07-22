@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{99CAD451-B0FC-44E4-A1B5-BCEDADD5C1D1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ticket.SqlSugar</RootNamespace>
+    <AssemblyName>Ticket.SqlSugar</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="SqlSugar, Version=4.6.4.9, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\sqlSugar.4.6.4.9\lib\SqlSugar.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="DbFactory.cs" />
+    <Compile Include="Models\System_Client_Version.cs" />
+    <Compile Include="Models\Tbl_AlipayAccount.cs" />
+    <Compile Include="Models\Tbl_AppTokenUser.cs" />
+    <Compile Include="Models\Tbl_BankAccount.cs" />
+    <Compile Include="Models\Tbl_BarCode.cs" />
+    <Compile Include="Models\Tbl_DoorGate.cs" />
+    <Compile Include="Models\Tbl_Enterprise.cs" />
+    <Compile Include="Models\Tbl_EnterpriseUser.cs" />
+    <Compile Include="Models\Tbl_EnterpriseUserOpLog.cs" />
+    <Compile Include="Models\Tbl_EnterpriseUserTicket.cs" />
+    <Compile Include="Models\Tbl_Ledger.cs" />
+    <Compile Include="Models\Tbl_Notice.cs" />
+    <Compile Include="Models\Tbl_NoticeOrderConsumed.cs" />
+    <Compile Include="Models\Tbl_NoticeRelation.cs" />
+    <Compile Include="Models\Tbl_Order.cs" />
+    <Compile Include="Models\Tbl_OrderDetail.cs" />
+    <Compile Include="Models\Tbl_OrderTravelNotice.cs" />
+    <Compile Include="Models\Tbl_Order_Config.cs" />
+    <Compile Include="Models\Tbl_Order_Invoice.cs" />
+    <Compile Include="Models\Tbl_OTABusiness.cs" />
+    <Compile Include="Models\Tbl_OTABusinessUser.cs" />
+    <Compile Include="Models\Tbl_OTATicketRelation.cs" />
+    <Compile Include="Models\Tbl_OTAUser.cs" />
+    <Compile Include="Models\Tbl_Power_Role.cs" />
+    <Compile Include="Models\Tbl_Power_RoleSource.cs" />
+    <Compile Include="Models\Tbl_Power_ScenicSource.cs" />
+    <Compile Include="Models\Tbl_Power_Source.cs" />
+    <Compile Include="Models\Tbl_Power_UserRole.cs" />
+    <Compile Include="Models\Tbl_RefundDetail.cs" />
+    <Compile Include="Models\Tbl_Refund_tmp.cs" />
+    <Compile Include="Models\Tbl_SaleLog.cs" />
+    <Compile Include="Models\Tbl_Scenic.cs" />
+    <Compile Include="Models\Tbl_ScenicGate.cs" />
+    <Compile Include="Models\Tbl_Scenic_PrintModel.cs" />
+    <Compile Include="Models\Tbl_Sms.cs" />
+    <Compile Include="Models\Tbl_SmsRechargeRecord.cs" />
+    <Compile Include="Models\Tbl_SmsTemplate.cs" />
+    <Compile Include="Models\Tbl_Stock.cs" />
+    <Compile Include="Models\Tbl_StockIn.cs" />
+    <Compile Include="Models\Tbl_StockInDetail.cs" />
+    <Compile Include="Models\Tbl_StockLog.cs" />
+    <Compile Include="Models\Tbl_StockOut.cs" />
+    <Compile Include="Models\Tbl_StockOutDetail.cs" />
+    <Compile Include="Models\Tbl_StockRefund.cs" />
+    <Compile Include="Models\Tbl_StockRefundDetail.cs" />
+    <Compile Include="Models\Tbl_StockScrap.cs" />
+    <Compile Include="Models\Tbl_StockScrapDetail.cs" />
+    <Compile Include="Models\Tbl_SysAdmin.cs" />
+    <Compile Include="Models\Tbl_SysAdminLog.cs" />
+    <Compile Include="Models\Tbl_SysRole.cs" />
+    <Compile Include="Models\Tbl_SysSms.cs" />
+    <Compile Include="Models\Tbl_SysSmsTemplate.cs" />
+    <Compile Include="Models\Tbl_Ticket.cs" />
+    <Compile Include="Models\Tbl_TicketConsume.cs" />
+    <Compile Include="Models\Tbl_TicketDoorGate.cs" />
+    <Compile Include="Models\Tbl_TicketRelation.cs" />
+    <Compile Include="Models\Tbl_TicketRule.cs" />
+    <Compile Include="Models\Tbl_TicketSellerRights.cs" />
+    <Compile Include="Models\Tbl_TicketType.cs" />
+    <Compile Include="Models\Tbl_TicketWindow.cs" />
+    <Compile Include="Models\Tbl_Ticket_Testing.cs" />
+    <Compile Include="Models\Tbl_TravelAgencyGuides.cs" />
+    <Compile Include="Models\Tbl_TravelAgencyOrder.cs" />
+    <Compile Include="Models\Tbl_TravelAgencyOrderDetail.cs" />
+    <Compile Include="Models\Tbl_TravelAgencyOrderLog.cs" />
+    <Compile Include="Models\Tbl_Tvm.cs" />
+    <Compile Include="Models\Tbl_TvmTicket.cs" />
+    <Compile Include="Models\Tbl_ValidateCode.cs" />
+    <Compile Include="Models\Tbl_WeChatAccount.cs" />
+    <Compile Include="Models\Tbl_WeiXin_User.cs" />
+    <Compile Include="Models\Tbl_Withdrawals.cs" />
+    <Compile Include="Models\Tbl_YearTicket.cs" />
+    <Compile Include="Models\Tbl_YearTicketOrder.cs" />
+    <Compile Include="Models\Tbl_YearTicket_AdmissionRecord.cs" />
+    <Compile Include="Models\Tbl_YearTicket_FingerPrint.cs" />
+    <Compile Include="Models\Tbl_YearTicket_OrderDetail.cs" />
+    <Compile Include="Models\Tbl_YearTicket_User.cs" />
+    <Compile Include="PagedList.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositoryBase.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

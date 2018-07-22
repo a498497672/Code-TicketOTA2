@@ -1,0 +1,103 @@
+﻿@model Ticket.Model.Model.OtaBusinessUser.LoginUser
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>修改密码</title>
+    <link href="~/JavaScript/layui/css/layui.css" rel="stylesheet" />
+    <link href="~/Content/common.css?v=1.1" rel="stylesheet" />
+</head>
+<body>
+    <div class="layui-main-common">
+        <div class="layui-form-item">
+            <blockquote class="layui-elem-quote">用户管理  >  修改密码</blockquote>
+        </div>
+        <div style=" margin:30px 0px; width:405px; ">
+            <form class="layui-form" action="">
+                <div class="layui-form-item">
+                    <label class="layui-form-label layui-form-label-width">用户名：<span class="labelRed">&nbsp;</span></label>
+                    <div class="layui-input-inline">
+                        <div class="layui-form-mid layui-word-aux">@Model.UserName</div>
+                    </div>
+                    <div class="layui-form-mid layui-word-aux"></div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label layui-form-label-width">现密码：<span class="labelRed">*</span></label>
+                    <div class="layui-input-inline">
+                        <input type="password" name="PassWord" lay-verify="required|pass" nameMsg="现密码" autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux"></div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label layui-form-label-width">新密码：<span class="labelRed">*</span></label>
+                    <div class="layui-input-inline">
+                        <input type="password" name="NowPassWord" lay-verify="required|pass" nameMsg="新密码" autocomplete="off" class="layui-input">
+                    </div>
+                    <div class="layui-form-mid layui-word-aux"></div>
+                </div>
+                <div class="layui-form-item">
+                    <div style="text-align:center;">
+                        <button class="layui-btn" lay-submit="action" lay-filter="action">确定</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="~/JavaScript/jquery-1.8.3.min.js"></script>
+    <script src="~/JavaScript/layui/layui.js"></script>
+    <script>
+        layui.use(['table', 'element', 'form'], function () {
+            var table = layui.table, form = layui.form, element = layui.element, $ = layui.$;
+
+            form.verify({
+                pass: function (value, item) { //value：表单的值、item：表单的DOM对象
+                    if (value != "") {
+                        if (/^[\S]{6,12}$/.test(value) == false) {
+                            return '密码6-12位，且不能出现空格';
+                        }
+                    }
+                },
+                required: function (value, item) { //value：表单的值、item：表单的DOM对象
+                    if (value == "" || value == undefined || value == null) {
+                        var errorMsg = $(item).attr("nameMsg");
+                        if (errorMsg == "" || errorMsg == undefined || errorMsg == null) {
+                            errorMsg = "必填项";
+                        }
+                        return errorMsg + "不能为空";
+                    }
+                }
+            });
+
+            var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+            //监听提交
+            form.on('submit(action)', function (data) {
+                $.ajax({
+                    url: '/Home/UpdateUserData',
+                    data: data.field,
+                    type: 'post',
+                    dataType: "json",
+                    success: function (data, status) {
+                        if (data.success) {
+                            parent.layer.msg(data.message, { icon: 1 });
+                        } else {
+                            parent.layer.msg(data.message, { icon: 2 });
+                        }
+                    },
+                    beforeSend: function () {
+                        layer.load("loading");
+                    },
+                    complete: function () {
+                        layer.closeAll('loading');
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+</body>
+</html>

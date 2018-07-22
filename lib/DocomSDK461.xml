@@ -1,0 +1,5616 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DocomSDK461</name>
+    </assembly>
+    <members>
+        <member name="T:DocomSDK.API.APIRequest">
+            <summary>
+            API请求
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.APIRequest.Token">
+            <summary>
+            许可串
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.APIRequest.Time">
+            <summary>
+            时间
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.APIResult`1">
+            <summary>
+            API调用返回值 模版
+            </summary>
+            <typeparam name="T"></typeparam>    
+        </member>
+        <member name="P:DocomSDK.API.APIResult`1.State">
+            <summary>
+            结果状态
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.APIResult`1.Message">
+            <summary>
+            结果消息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.APIResult`1.Data">
+            <summary>
+            结果的返回值
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.Cabinet.CabinetAPI">
+            <summary>
+            水公园储物柜API调用封装
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.Device.Cabinet.CabinetAPI.ActivateCard(DocomSDK.Cabinet.CardConfig)">
+            <summary>
+             设置卡号激活/取消卡号激活
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Device.Cabinet.CabinetAPI.BindCardInfo(DocomSDK.Cabinet.BindInfo)">
+            <summary>
+            卡号绑定和解绑
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Device.Cabinet.CabinetAPI.SetClearBox(DocomSDK.Cabinet.CabinetDevice)">
+            <summary>
+            设置清箱
+            </summary>
+            <param name="device"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Device.Cabinet.CabinetAPI.ConfigAdminCard(DocomSDK.Cabinet.AdminConfig)">
+            <summary>
+            配置管理员卡
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Device.Cabinet.CabinetAPI.ConfigDateTime(DocomSDK.Cabinet.TimeConfig)">
+            <summary>
+            配置日期时间
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Device.Cabinet.CabinetAPI.ControlBoxDoor(DocomSDK.Cabinet.DoorControl)">
+            <summary>
+            柜子开关锁门
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Device.Cabinet.CabinetAPI.Down_DeviceList(DocomSDK.API.APIRequest)">
+            <summary>
+            下载平台中所有设备的相关信息
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Device.Cabinet.CabinetAPI.QueryAllBoxStatus(DocomSDK.Cabinet.CabinetDevice)">
+            <summary>
+            查询所有柜门的状态
+            </summary>
+            <param name="device"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Device.Cabinet.CabinetAPI.QueryBoxStatus(DocomSDK.Cabinet.QueryStatus)">
+            <summary>
+            查询柜子格子状态
+            </summary>
+            <param name="BoxNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Device.Cabinet.CabinetAPI.QueryCardStatus(DocomSDK.Cabinet.QueryCard)">
+            <summary>
+            查询卡状态
+            </summary>
+            <param name="cardNo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Device.Cabinet.CabinetAPI.SetCleanCard(DocomSDK.Cabinet.CardConfig)">
+            <summary>
+            设置或取消清洁卡
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.API.Device.Cabinet.CabinetDeviceInfo">
+            <summary>
+            水公园柜子设备信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Cabinet.CabinetDeviceInfo.DeviceSN">
+            <summary>
+            设备序列号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Cabinet.CabinetDeviceInfo.StartDate">
+            <summary>
+            生效时间
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Cabinet.CabinetDeviceInfo.EndDate">
+            <summary>
+            截止日期
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Cabinet.CabinetDeviceInfo.LastUpdate">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.Cabinet.ICabinetDeviceInfo">
+            <summary>
+            水公园柜子设备信息下载接口
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.Device">
+            <summary>
+            设备对象
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Device.DeviceID">
+            <summary>
+            设备ID
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Device.DeviceName">
+            <summary>
+            设备名称
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Device.Remarks">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.eSensor.eSensorDeviceInfo">
+            <summary>
+            客流计设备对象
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.eSensor.eSensorDeviceInfo.IPAddress">
+            <summary>
+            客流计的IP地址
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.eSensor.eSensorDeviceInfo.Mac">
+            <summary>
+            客流计的Mac
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.eSensor.eSensorEvent">
+            <summary>
+            客流计推送通知内容
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.eSensor.eSensorEvent.Device">
+            <summary>
+            客流计对象
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.eSensor.eSensorEvent.InCount">
+            <summary>
+            In向通过人数
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.eSensor.eSensorEvent.OutCount">
+            <summary>
+            Out向通过人数
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.eSensor.eSensorEvent.Time">
+            <summary>
+            时间截
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.eSensor.eSensorEvent.Channel">
+            <summary>
+            事件发生的通道号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.eSensor.eSensorEvent.InSpeed">
+            <summary>
+            进速度
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.eSensor.eSensorEvent.OutSpeed">
+            <summary>
+            出速度
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.eSensor.eSensorEvent.ZoneNum">
+            <summary>
+            区域人数
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.eSensor.eSensorEvent.ID">
+            <summary>
+            数据标识
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.eSensor.IeSensor">
+            <summary>
+            客流计设备信息下载接口
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.Device.eSensor.IeSensor.QueryEventLogByTime(DocomSDK.API.Device.eSensor.QueryLogByTime)">
+            <summary>
+            查询事件日志记录
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.API.Device.eSensor.SensorLog">
+            <summary>
+            客流计日志
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.eSensor.SensorLog.TotalCount">
+            <summary>
+            总条数
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.eSensor.SensorLog.PageIndex">
+            <summary>
+            第几页
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.eSensor.SensorLog.List">
+            <summary>
+            数据列表
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.eSensor.QueryLogByTime">
+            <summary>
+            查询日志
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.eSensor.QueryLogByTime.IsALL">
+            <summary>
+            查所有还是按DeviceID查
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.eSensor.QueryLogByTime.DeviceID">
+            <summary>
+            设备ID
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.eSensor.QueryLogByTime.StartTime">
+            <summary>
+            开始时间
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.eSensor.QueryLogByTime.EndTime">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.eSensor.QueryLogByPage">
+            <summary>
+            查询日志
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.eSensor.QueryLogByPage.IsALL">
+            <summary>
+            查所有还是按DeviceID查
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.eSensor.QueryLogByPage.DeviceID">
+            <summary>
+            设备ID
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.eSensor.QueryLogByPage.PageSize">
+            <summary>
+            页大小
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.eSensor.QueryLogByPage.PageIndex">
+            <summary>
+            第几页（从1开始)
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.eSensor.IeSensorNotify">
+            <summary>
+            客流计事件通知接口
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.Device.eSensor.IeSensorNotify.On_SensorNotify_Event(DocomSDK.API.Device.eSensor.eSensorEvent)">
+            <summary>
+            计数变动通知
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="T:DocomSDK.API.Device.eSensor.sSensorAPI">
+            <summary>
+            客流计API
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.Device.eSensor.sSensorAPI.Down_DeviceList(DocomSDK.API.APIRequest)">
+            <summary>
+            下载客流计设备信息列表
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Device.eSensor.sSensorAPI.QueryEventLogByPage(DocomSDK.API.Device.eSensor.QueryLogByPage)">
+            <summary>
+            按页查询事件记录
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Device.eSensor.sSensorAPI.QueryEventLogByTime(DocomSDK.API.Device.eSensor.QueryLogByTime)">
+            <summary>
+            按时间段查询
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.API.Device.hkDVR.hkDVRDeviceAPI">
+            <summary>
+            海康DVR设备API
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.Device.hkDVR.hkDVRDeviceAPI.Down_DeviceList(DocomSDK.API.APIRequest)">
+            <summary>
+            下载海康设备信息列表 
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.API.Device.hkDVR.HKDVRDeviceInfo">
+            <summary>
+            DVR设备对象
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.hkDVR.HKDVRDeviceInfo.IPAddress">
+            <summary>
+            DVR的IP地址
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.hkDVR.HKDVRDeviceInfo.Port">
+            <summary>
+            DVR的端口
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.hkDVR.HKDVRDeviceInfo.Account">
+            <summary>
+            帐号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.hkDVR.HKDVRDeviceInfo.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.hkDVR.HKDVRDeviceInfo.ChannelID">
+            <summary>
+            通道ID
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.hkDVR.IDVR_Hikvision">
+            <summary>
+            海康DVR访问接口
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.IPCamera.IIPCameraAlarm">
+            <summary>
+            IP摄像头报警事件
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.Device.IPCamera.IIPCameraAlarm.On_IPCameraAlarmEvent(DocomSDK.API.Device.IPCamera.IPCamera_AlarmInfo)">
+            <summary>
+            IP摄像头报警事件
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="T:DocomSDK.API.Device.IPCamera.IPCamera_AlarmInfo">
+            <summary>
+            IP摄像头报警内容
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.IPCamera.IPCamera_AlarmInfo.DeviceIP">
+            <summary>
+            设备的IP地址
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.IPCamera.IPCamera_AlarmInfo.Message">
+            <summary>
+            消息内容
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.IPCamera.IPCamera_AlarmInfo.Image">
+            <summary>
+            截取的照片
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.IPCamera.IPCamera_AlarmInfo.Time">
+            <summary>
+            时间戳
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.IPCamera.IPCamera">
+            <summary>
+            IP摄像头操作工具类
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.Device.IPCamera.IPCamera.IPCamera_Subscribe(System.String,System.String,System.String,System.String)">
+            <summary>
+            IP摄像头报警事件订阅
+            </summary>
+            <param name="user">帐号</param>
+            <param name="pwd">密码</param>
+            <param name="ip">摄像头地址</param>
+            <param name="recv_url">事件接收地址</param>
+            <remarks>注意：接收地址不要Http://</remarks>
+            <returns>成功返回订阅ID  SubscribeIdx:guid </returns>
+        </member>
+        <member name="M:DocomSDK.API.Device.IPCamera.IPCamera.IPCamera_UnSubscribe(System.String,System.String,System.String,System.String)">
+            <summary>
+            取消事件订阅
+            </summary>
+            <param name="user">帐号</param>
+            <param name="pwd">密码</param>
+            <param name="ip">IP址</param>
+            <param name="subscribeIdx">订阅唯一标识符</param>
+            <returns>执行成功返回OK</returns>
+        </member>
+        <member name="M:DocomSDK.API.Device.IPCamera.IPCamera.IPCamera_Snapshot(System.String,System.String,System.String,System.Int32,System.Int32,System.Byte[]@)">
+            <summary>
+            从摄像机截取照片
+            </summary>
+            <param name="user">帐号</param>
+            <param name="pwd">密码</param>
+            <param name="ip">IP址</param>
+            <param name="channel">通道号</param>
+            <param name="profile">质量值0-9  数据越大图片越大</param>
+            <param name="img">截取到的图片的数据</param>
+            <returns>成功返回真</returns>
+        </member>
+        <member name="T:DocomSDK.API.Device.IPCamera.IPCameraNotity">
+            <summary>
+            IP摄像头通知
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.Device.IPCamera.IPCameraNotity.#ctor(System.String)">
+            <summary>
+            构造
+            </summary>
+            <param name="url"></param>
+        </member>
+        <member name="M:DocomSDK.API.Device.IPCamera.IPCameraNotity.On_IPCameraAlarmEvent(DocomSDK.API.Device.IPCamera.IPCamera_AlarmInfo)">
+            <summary>
+            摄像头报警事件
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="T:DocomSDK.API.Device.IPCamera.MJPEGClient">
+            <summary>
+            IP摄像头视频流获取对象
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.Device.IPCamera.MJPEGClient.Snapshot(System.Byte[]@)">
+            <summary>
+            抓取
+            </summary>
+            <param name="jpeg"></param>
+            <returns></returns>
+        </member>
+        <member name="P:DocomSDK.API.Device.IPCamera.MJPEGClient.FrameCount">
+            <summary>
+            帧计数
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.Device.IPCamera.MJpegProtocol.SearchArray(System.Byte[],System.Int32,System.Int32,System.Byte[],System.Byte[],System.Byte[]@)">
+            <summary>
+            在一个数组中利用头尾数据定位一段数据
+            </summary>
+            <param name="data"></param>
+            <param name="offset"></param>
+            <param name="count"></param>
+            <param name="head"></param>
+            <param name="end"></param>
+            <param name="startPos"></param>
+            <returns>返回抽取数据后的位置</returns>
+        </member>
+        <member name="M:DocomSDK.API.Device.IPCamera.MJpegProtocol.FindIndex(System.Byte[],System.Int32,System.Int32,System.Byte[])">
+            <summary>
+            在一个数组中找一目标出现的位置
+            </summary>
+            <param name="data"></param>
+            <param name="offset"></param>
+            <param name="count"></param>
+            <param name="conditions"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.API.Device.LED.ILedDevice">
+            <summary>
+            LED设备访问接口
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.Device.LED.ILedDevice.ShowText(DocomSDK.API.Device.LED.LedTextInfo)">
+            <summary>
+            在指定的LED上显示字符串
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.Device.LED.ILedDevice.LedClear(DocomSDK.API.Device.LED.LedDeviceInfo)">
+            <summary>
+            清空屏幕内容
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.API.Device.LED.LedDeviceAPI">
+            <summary>
+            LED显示屏设备API
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.Device.LED.LedDeviceAPI.LedClear(DocomSDK.API.Device.LED.LedDeviceInfo)">
+            <summary>
+            清屏
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Device.LED.LedDeviceAPI.ShowText(DocomSDK.API.Device.LED.LedTextInfo)">
+            <summary>
+            在LED屏上显示文字
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.API.Device.LED.LedDeviceInfo">
+            <summary>
+            LED显示屏的设备信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.LED.LedDeviceInfo.IPAddress">
+            <summary>
+            设备的IP地址
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.LED.LedTextInfo">
+            <summary>
+            屏信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.LED.LedTextInfo.Device">
+            <summary>
+            设备对象
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.LED.LedTextInfo.Text">
+            <summary>
+            要输出的文字,与区域一致
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.LED.LedMessage">
+            <summary>
+            LED屏要显示的信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.LED.LedMessage.AreaID">
+            <summary>
+            目标区域的序号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.LED.LedMessage.Text">
+            <summary>
+            要显示的文字
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.M4Channel.M4ChannelAPI">
+            <summary>
+            M4闸机调用
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.Device.M4Channel.M4ChannelAPI.ClearCount(DocomSDK.M4_ExitChannel.SynchroCount)">
+            <summary>
+            清除计数
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Device.M4Channel.M4ChannelAPI.Down_DeviceList(DocomSDK.API.APIRequest)">
+            <summary>
+            下载设备信息列表
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Device.M4Channel.M4ChannelAPI.EnforceShutdownChannel(DocomSDK.M4_ExitChannel.ShutdownChannel)">
+            <summary>
+            强制上落杆
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="P:DocomSDK.API.Device.M4Channel.M4DeviceInfo.DeviceSN">
+            <summary>
+            设备序列号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.M4Channel.M4DeviceInfo.StartDate">
+            <summary>
+            生效时间
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.M4Channel.M4DeviceInfo.EndDate">
+            <summary>
+            截止日期
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.M4Channel.M4DeviceInfo.LastUpdate">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.M4Channel.M4DeviceInfo.WorkMode">
+            <summary>
+            工作模式 
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.M4Channel.M4DeviceInfo.TotalCount">
+            <summary>
+            总人数
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.M4Channel.M4DeviceInfo.Version">
+            <summary>
+            配置版本
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.Parking.ParkingPlate">
+            <summary>
+            车牌识别数据
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.ParkingPlate.AlarmInfoPlate">
+            <summary>
+            识别内容
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.ParkingPlate.WhiteListInfo">
+            <summary>
+            白名单
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.Parking.Alarminfoplate">
+            <summary>
+            识别内容
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Alarminfoplate.channel">
+            <summary>
+            通道号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Alarminfoplate.deviceName">
+            <summary>
+            设备名
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Alarminfoplate.ipaddr">
+            <summary>
+            IP地址
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Alarminfoplate.result">
+            <summary>
+            识别结果
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Alarminfoplate.seriaIno">
+            <summary>
+            设备序列号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Alarminfoplate.nParkID">
+            <summary>
+            停车场ID
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Alarminfoplate.ParkID">
+            <summary>
+            停车场ID
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Alarminfoplate.ParkName">
+            <summary>
+            停车场名字
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Alarminfoplate.ParkDoor">
+            <summary>
+            出入口名字
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.Parking.Park_Result">
+            <summary>
+            停车场车牌识别内容
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Park_Result.PlateResult">
+            <summary>
+            停车场车牌识别内容
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.Parking.Plateresult">
+            <summary>
+            停车场车牌识别内容
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Plateresult.bright">
+            <summary>
+            预留
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Plateresult.carBright">
+            <summary>
+            车身亮度
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Plateresult.carColor">
+            <summary>
+            车身颜色
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Plateresult.colorType">
+            <summary>
+            车牌颜色值
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Plateresult.colorValue">
+            <summary>
+            颜色值（预留）
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Plateresult.confidence">
+            <summary>
+            可信度
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Plateresult.direction">
+            <summary>
+            行驶方向
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Plateresult.imagePath">
+            <summary>
+            图片路径
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Plateresult.license">
+            <summary>
+            车牌号码
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Plateresult.location">
+            <summary>
+            车牌在图片中的位置
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Plateresult.timeStamp">
+            <summary>
+            识别结果对应帧的时间截
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Plateresult.timeUsed">
+            <summary>
+            识别耗时
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Plateresult.triggerType">
+            <summary>
+            触发类型
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Plateresult.type">
+            <summary>
+            车牌类型
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Plateresult.platecolor">
+            <summary>
+            车牌颜色
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Plateresult.carLogo">
+            <summary>
+            车标
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Plateresult.CarType">
+            <summary>
+            车型
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Plateresult.plateBright">
+            <summary>
+            车牌亮度
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Plateresult.recotime">
+            <summary>
+            识别时间
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Plateresult.imageFile">
+            <summary>
+            全景图（base64）编码
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Plateresult.imageFileLen">
+            <summary>
+            全景图数据开度
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Plateresult.imageFragmentFile">
+            <summary>
+            车牌小图数据（base64）编码
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Plateresult.imageFragmentFileLen">
+            <summary>
+            车牌小图数据长度
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.Parking.Park_Location">
+            <summary>
+            车牌位置
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Park_Location.RECT">
+            <summary>
+            坐标
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.Parking.Park_RECT">
+            <summary>
+            车牌坐标
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Park_RECT.bottom">
+            <summary>
+            下
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Park_RECT.left">
+            <summary>
+            左
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Park_RECT.right">
+            <summary>
+            右
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Park_RECT.top">
+            <summary>
+            上
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.Parking.Timestamp">
+            <summary>
+            时间截
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Timestamp.TimeVal">
+            <summary>
+            时间截
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.Parking.Timeval">
+            <summary>
+            时间截
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Timeval.sec">
+            <summary>
+            时间截
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Timeval.usec">
+            <summary>
+            时间截
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.Parking.Whitelistinfo">
+            <summary>
+            白名单
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Whitelistinfo.Info">
+            <summary>
+            相机内部白名单信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Whitelistinfo.WhiteListControl">
+            <summary>
+            白名单判断结果
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.Parking.ParkListInfo">
+            <summary>
+            相机内部白名单信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.ParkListInfo.WhiteListEnable">
+            <summary>
+            白名单是否启用（0未启用，1启用）
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.ParkListInfo.TimeMatchEable">
+            <summary>
+            白名单是否启用时间匹配（0未启用，1启用）
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.ParkListInfo.CreateTime">
+            <summary>
+            白名单建立时间
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.ParkListInfo.StartTime">
+            <summary>
+            白名单开始生效时间
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.ParkListInfo.EndTime">
+            <summary>
+            白名单截止时间
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.ParkListInfo.BlackList">
+            <summary>
+            是否被设置为黑名单
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.Parking.Whitelistcontrol">
+            <summary>
+            白名单判断结果
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Whitelistcontrol.OpenDoor">
+            <summary>
+            是否自动抬杆
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Whitelistcontrol.TimeCheck">
+            <summary>
+            是否在有效期内
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.Whitelistcontrol.InteriorCar">
+            <summary>
+            是否为内部车 
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.Parking.IParkinglot">
+            <summary>
+            停车场设备控制接口
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.Device.Parking.IParkinglot.SetTriggerChannel(DocomSDK.API.Device.Parking.ParkingDevice)">
+            <summary>
+            触发地感信号
+            </summary>
+            <param name="dev"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Device.Parking.IParkinglot.SetRelayClose(DocomSDK.API.Device.Parking.ParkingDevice)">
+            <summary>
+            抬杆开闸放行
+            </summary>
+            <param name="dev"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Device.Parking.IParkinglot.SnapJpegFrame(DocomSDK.API.Device.Parking.ParkingDevice)">
+            <summary>
+            抓拍摄像头图片
+            </summary>
+            <param name="dev"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.API.Device.Parking.ParkingDevice">
+            <summary>
+            停车场设备
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.ParkingDevice.IPAddress">
+            <summary>
+            IP地址
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Parking.ParkingDevice.Port">
+            <summary>
+            端口
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.Parking.IParkingNotity">
+            <summary>
+            停车场功能接口
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.Device.Parking.IParkingNotity.On_PlateNotityEvent(DocomSDK.API.Device.Parking.ParkingPlate)">
+            <summary>
+            车牌识别事件
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.API.Device.Parking.ParkingAPI">
+            <summary>
+            停车场设备控制接口
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.Device.Parking.ParkingAPI.#ctor(System.String,System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="url"></param>
+            <param name="token"></param>
+        </member>
+        <member name="M:DocomSDK.API.Device.Parking.ParkingAPI.SetRelayClose(DocomSDK.API.Device.Parking.ParkingDevice)">
+            <summary>
+            抬杆开闸放行
+            </summary>
+            <param name="dev"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Device.Parking.ParkingAPI.SetTriggerChannel(DocomSDK.API.Device.Parking.ParkingDevice)">
+            <summary>
+            触发地感信号
+            </summary>
+            <param name="dev"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Device.Parking.ParkingAPI.SnapJpegFrame(DocomSDK.API.Device.Parking.ParkingDevice)">
+            <summary>
+            抓拍摄像头图片
+            </summary>
+            <param name="dev"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.API.Device.SelfCabinet.SelfCabinetAPI">
+            <summary>
+            自助储物柜调用
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.Device.SelfCabinet.SelfCabinetAPI.PaymentMoney(DocomSDK.SelfCabinet.PaymentInfo)">
+            <summary>
+            支付
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="P:DocomSDK.API.Device.SelfCabinet.SelfCabinetInfo.DeviceSN">
+            <summary>
+            设备序列号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.SelfCabinet.SelfCabinetInfo.StartDate">
+            <summary>
+            生效时间
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.SelfCabinet.SelfCabinetInfo.EndDate">
+            <summary>
+            截止日期
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.SelfCabinet.SelfCabinetInfo.LastUpdate">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Device.Ticket.ADStringText">
+            <summary>
+            广告字符串
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Ticket.ADStringText.DeviceSN">
+            <summary>
+            设备序列号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Ticket.ADStringText.Text">
+            <summary>
+            广告文字
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.Device.Ticket.ITicketDeviceInfo.SetDeviceWorkMode(DocomSDK.API.Device.Ticket.SetWorkMode)">
+            <summary>
+            配置设备的工作模式
+            </summary>
+            <param name="mode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Device.Ticket.ITicketDeviceInfo.SetADText(DocomSDK.API.Device.Ticket.ADStringText)">
+            <summary>
+            配置设备的广告文字
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.API.Device.Ticket.SetWorkMode">
+            <summary>
+            设备工作模式
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Ticket.TicketDevice.DeviceSN">
+            <summary>
+            设备序列号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Ticket.TicketDevice.StartDate">
+            <summary>
+            生效时间
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Ticket.TicketDevice.EndDate">
+            <summary>
+            截止日期
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Ticket.TicketDevice.LastUpdate">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Ticket.TicketDevice.SystemType">
+            <summary>
+            系统类型
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Ticket.TicketDevice.DVR_ID">
+            <summary>
+            DVR关联ID
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Ticket.TicketDevice.LED_ID">
+            <summary>
+            Led屏关联ID
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Ticket.TicketDevice.WorkMode">
+            <summary>
+            工作模式配置
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.Ticket.TicketDevice.Version">
+            <summary>
+            配置版本
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.TVM.TVMDeviceInfo.DeviceSN">
+            <summary>
+            设备序列号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.TVM.TVMDeviceInfo.StartDate">
+            <summary>
+            生效时间
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.TVM.TVMDeviceInfo.EndDate">
+            <summary>
+            截止日期
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Device.TVM.TVMDeviceInfo.LastUpdate">
+            <summary>
+            最后修改时间
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.DocomPay.IDocomPay">
+            <summary>
+            道控支付接口
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.DocomPay.IDocomPay.CheckoutPayOff(DocomSDK.API.DocomPay.PayInfo)">
+            <summary>
+            付钱
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.API.DocomPay.PayClient">
+            <summary>
+            支付功能客户端
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.DocomPay.PayClient.CheckoutPayOff(DocomSDK.API.DocomPay.PayInfo)">
+            <summary>
+            提交支付
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.API.DocomPay.PayInfo">
+            <summary>
+            支付信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.DocomPay.PayInfo.merchant_code">
+            <summary>
+            商户编号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.DocomPay.PayInfo.terminal_no">
+            <summary>
+            终端编号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.DocomPay.PayInfo.payno">
+            <summary>
+            支付授权码
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.DocomPay.PayInfo.order_amount">
+            <summary>
+            订单总金额
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.DocomPay.PayInfo.terminal_type">
+            <summary>
+            终端类型 1:自助服务终端 2：paybox闸机盒子 3：pos系统 4：WAP平台
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.DocomPay.PayInfo.timestamp">
+            <summary>
+            时间戳
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.DocomPay.PayInfo.signature">
+            <summary>
+            签名
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.DocomPay.PayResult">
+            <summary>
+            支付结果
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.DocomPay.PayResult.IsTrue">
+            <summary>
+            true 调用成功 false 调用失败
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.DocomPay.PayResult.ResultCode">
+            <summary>
+            结果代码
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.DocomPay.PayResult.ResultMsg">
+            <summary>
+            结果代码详情
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.DocomPay.PayResult.return_trade_no">
+            <summary>
+            本次交易订单号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.DocomPay.PayResult.ResultJson">
+            <summary>
+            未标记
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.DocomPay.PayResult.OrderNo">
+            <summary>
+            未标记
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.DocomPay.PayResult.Product_Jsoncode">
+            <summary>
+            未标记
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.FaceDetect.FaceDetectAPI">
+            <summary>
+            人脸检测功能API
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.FaceDetectAPI.#ctor(System.String,System.String)">
+            <summary>
+            构造
+            </summary>
+            <param name="baseURL"></param>
+            <param name="token"></param>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.FaceDetectAPI.ExtractFeature(DocomSDK.API.FaceDetect.FaceImage)">
+            <summary>
+            特征提取检测
+            </summary>
+            <param name="img"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.FaceDetectAPI.MatchFeatureImage(DocomSDK.API.FaceDetect.MatchObject)">
+            <summary>
+            匹配两个数据（图片\特征)
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.FaceDetectAPI.SearchFace(DocomSDK.API.FaceDetect.SearchObject)">
+            <summary>
+            通过特征检过数据库中的人脸
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.API.FaceDetect.FaceNotityAPI">
+            <summary>
+            人脸识别事件通知工具
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.FaceNotityAPI.#ctor(System.String,System.String)">
+            <summary>
+            构造
+            </summary>
+            <param name="baseURL"></param>
+            <param name="token"></param>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.FaceNotityAPI.On_FaceNotityEvent(DocomSDK.API.FaceDetect.FaceNotityInfo)">
+            <summary>
+            推送人脸识别通知
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="T:DocomSDK.API.FaceDetect.FaceStoreAPI">
+            <summary>
+            人脸数据存储器API
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.FaceStoreAPI.#ctor(System.String,System.String)">
+            <summary>
+            构造
+            </summary>
+            <param name="baseURL"></param>
+            <param name="token"></param>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.FaceStoreAPI.AddFaceFeature(DocomSDK.API.FaceDetect.FaceFeature)">
+            <summary>
+            添加人脸特征数据
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.FaceStoreAPI.CreateFaceGroup(DocomSDK.API.FaceDetect.FaceGroup)">
+            <summary>
+            创建人脸组
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.FaceStoreAPI.DeleteFaceFeature(DocomSDK.API.FaceDetect.FaceFeature)">
+            <summary>
+            删除人脸特征信息
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.FaceStoreAPI.DeleteFaceGroup(DocomSDK.API.FaceDetect.FaceGroup)">
+            <summary>
+            删除人脸组
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.FaceStoreAPI.DownloadFaceFeature(DocomSDK.API.FaceDetect.QueryFaceList)">
+            <summary>
+            下载人脸特征数据
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.FaceStoreAPI.EditFaceFeature(DocomSDK.API.FaceDetect.FaceFeature)">
+            <summary>
+            编辑人脸特征
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.FaceStoreAPI.EditFaceGroup(DocomSDK.API.FaceDetect.FaceGroup)">
+            <summary>
+            编辑人脸组
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.FaceStoreAPI.GetAllFaceGroup(DocomSDK.API.APIRequest)">
+            <summary>
+            获取人脸组列表
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.API.FaceDetect.IFaceDetect">
+            <summary>
+            人脸识别检测功能接口
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.IFaceDetect.ExtractFeature(DocomSDK.API.FaceDetect.FaceImage)">
+            <summary>
+            提取特征
+            </summary>
+            <param name="img"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.IFaceDetect.SearchFace(DocomSDK.API.FaceDetect.SearchObject)">
+            <summary>
+            通过图片在数据库中搜索是哪个人
+            </summary>
+            <param name="img"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.IFaceDetect.MatchFeatureImage(DocomSDK.API.FaceDetect.MatchObject)">
+            <summary>
+            比对两个数据   
+            </summary>
+            <param name="obj"></param>
+            <returns>返回匹配度</returns>
+        </member>
+        <member name="T:DocomSDK.API.FaceDetect.MatchObject">
+            <summary>
+            数据匹配条件
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.MatchObject.Data1">
+            <summary>
+            数据1
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.MatchObject.Data2">
+            <summary>
+            数据2
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.FaceDetect.MatchData">
+            <summary>
+            需要匹配的数据
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.MatchData.DataType">
+            <summary>
+            数据类型 
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.MatchData.Data">
+            <summary>
+            数据内容
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.FaceDetect.MatchDataType">
+            <summary>
+            准备匹配的数据类型
+            </summary>
+        </member>
+        <member name="F:DocomSDK.API.FaceDetect.MatchDataType.IMAGE">
+            <summary>
+            图像
+            </summary>
+        </member>
+        <member name="F:DocomSDK.API.FaceDetect.MatchDataType.FEATURE">
+            <summary>
+            特征
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.FaceDetect.SearchResult">
+            <summary>
+            检索结果
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.SearchResult.Value">
+            <summary>
+            匹配度        
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.FaceDetect.SearchMode">
+            <summary>
+            搜索模式
+            </summary>
+        </member>
+        <member name="F:DocomSDK.API.FaceDetect.SearchMode.OnlyMaxValue">
+            <summary>
+            只要超过阀值的结果最大值
+            </summary>
+        </member>
+        <member name="F:DocomSDK.API.FaceDetect.SearchMode.FirstObject">
+            <summary>
+            只要超过阀值的第一个结果
+            </summary>
+        </member>
+        <member name="F:DocomSDK.API.FaceDetect.SearchMode.MultiRecord">
+            <summary>
+            要求超过阀值后的最高值N个结果
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.FaceDetect.SearchObject">
+            <summary>
+            检索人脸数据库
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.SearchObject.GroupID">
+            <summary>
+            决定从哪个人脸组中搜索（如果填0则从该开发者帐号下所有人脸组搜索）
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.SearchObject.Value">
+            <summary>
+            最低阀值(0-100)
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.SearchObject.NeedCount">
+            <summary>
+            指定提取超过阀值的数据个数
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.SearchObject.NeedImage">
+            <summary>
+            是否需要结果相片
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.SearchObject.Mode">
+            <summary>
+            搜索模式
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.SearchObject.Data">
+            <summary>
+            检索的数据
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.FaceDetect.IFaceStore">
+            <summary>
+            人脸数据存储器
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.IFaceStore.CreateFaceGroup(DocomSDK.API.FaceDetect.FaceGroup)">
+            <summary>
+            建立人脸组
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.IFaceStore.GetAllFaceGroup(DocomSDK.API.APIRequest)">
+            <summary>
+            获取所有人脸组
+            </summary> 
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.IFaceStore.DeleteFaceGroup(DocomSDK.API.FaceDetect.FaceGroup)">
+            <summary>
+            删除人脸组
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.IFaceStore.EditFaceGroup(DocomSDK.API.FaceDetect.FaceGroup)">
+            <summary>
+            修改人脸组信息
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.IFaceStore.AddFaceFeature(DocomSDK.API.FaceDetect.FaceFeature)">
+            <summary>
+            添加人脸特征
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:DocomSDK.API.FaceDetect.IFaceStore.EditFaceFeature(DocomSDK.API.FaceDetect.FaceFeature)" -->
+        <member name="M:DocomSDK.API.FaceDetect.IFaceStore.DeleteFaceFeature(DocomSDK.API.FaceDetect.FaceFeature)">
+            <summary>
+            删除人脸特征
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.IFaceStore.DownloadFaceFeature(DocomSDK.API.FaceDetect.QueryFaceList)">
+            <summary>
+            下载人脸数据
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.IFaceStore.GetFaceImage(DocomSDK.API.FaceDetect.QueryFaceImage)">
+            <summary>
+            读取人脸的相片
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.API.FaceDetect.QueryFaceImage">
+            <summary>
+            查询特征相片
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.QueryFaceImage.GroupID">
+            <summary>
+            所属的人脸组
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.QueryFaceImage.FeatureID">
+            <summary>
+            所属的特征
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.FaceDetect.FaceList">
+            <summary>
+            人脸数据列表
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.FaceList.TotalCount">
+            <summary>
+            总记录条数
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.FaceList.PageIndex">
+            <summary>
+            当前页号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.FaceList.PageSize">
+            <summary>
+            页大小
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.FaceList.Data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.FaceDetect.QueryFaceList">
+            <summary>
+            查询人脸列表
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.QueryFaceList.GroupID">
+            <summary>
+            人脸组ID
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.QueryFaceList.PageIndex">
+            <summary>
+            第几页（从1开始）
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.QueryFaceList.PageSize">
+            <summary>
+            每页的条数
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.FaceDetect.FaceFeature">
+            <summary>
+            人脸特征数据
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.FaceFeature.ID">
+            <summary>
+            特征的ID号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.FaceFeature.GroupID">
+            <summary>
+            所属的人脸组ID号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.FaceFeature.FeatureName">
+            <summary>
+            特征的名称
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.FaceFeature.FeatureNumber">
+            <summary>
+            特征的自编号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.FaceFeature.Remarks">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.FaceFeature.FeatureInfo">
+            <summary>
+            特征数据
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.FaceFeature.CreateDate">
+            <summary>
+            建立日期
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.FaceFeature.Data">
+            <summary>
+            图片数据
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.FaceDetect.FeatureData">
+            <summary>
+            特征数据
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.FeatureData.Info">
+            <summary>
+            特征数据（Base64编码）
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.FaceDetect.FaceImage">
+            <summary>
+            人脸图片
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.FaceImage.Image">
+            <summary>
+            图片（Base64编码）
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.FaceDetect.FaceGroup">
+            <summary>
+            人脸组
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.FaceGroup.ID">
+            <summary>
+            人脸组ID号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.FaceGroup.Name">
+            <summary>
+            人脸组名称
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.FaceGroup.Remarks">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.FaceGroup.CreateDate">
+            <summary>
+            建立时间
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.FaceDetect.IFaceNotity">
+            <summary>
+            人脸通知接口
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.FaceDetect.IFaceNotity.On_FaceNotityEvent(DocomSDK.API.FaceDetect.FaceNotityInfo)">
+            <summary>
+            人脸识别通知事件
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="T:DocomSDK.API.FaceDetect.FaceNotityInfo">
+            <summary>
+            人脸通知信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.FaceNotityInfo.Device">
+            <summary>
+            相机设备
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.FaceNotityInfo.FaceInfo">
+            <summary>
+            识别出来的人脸信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.FaceNotityInfo.Time">
+            <summary>
+            时间截
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.FaceDetect.FaceCamera">
+            <summary>
+            人脸相机
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.FaceCamera.IPAddress">
+            <summary>
+            设备IP址
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.FaceDetect.FaceCamera.ChannelID">
+            <summary>
+            通道号
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.FunctionAPI">
+            <summary>
+            功能性API类型
+            </summary>
+        </member>
+        <member name="F:DocomSDK.API.FunctionAPI.FaceDetectAPI">
+            <summary>
+            人脸检测
+            </summary>        
+        </member>
+        <member name="F:DocomSDK.API.FunctionAPI.DocomPay">
+            <summary>
+            支付功能
+            </summary>        
+        </member>
+        <member name="F:DocomSDK.API.FunctionAPI.DocomTTS">
+            <summary>
+            道控语音转换接口
+            </summary>
+        </member>
+        <member name="F:DocomSDK.API.FunctionAPI.VenaFeature">
+            <summary>
+            掌静脉API
+            </summary>
+        </member>
+        <member name="F:DocomSDK.API.FunctionAPI.ParkingLot">
+            <summary>
+            停车场设备API地址
+            </summary>
+        </member>
+        <member name="F:DocomSDK.API.FunctionAPI.LEDScreen">
+            <summary>
+            LED显示屏控制接口
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.EventNotify">
+            <summary>
+            推送通知类型
+            </summary>
+        </member>
+        <member name="F:DocomSDK.API.EventNotify.eSensor_Event">
+            <summary>
+            客流计事件推送通知
+            </summary>
+        </member>
+        <member name="F:DocomSDK.API.EventNotify.Cabinnet_Event">
+            <summary>
+            水公园储物柜推送
+            </summary>
+        </member>
+        <member name="F:DocomSDK.API.EventNotify.Parking_Event">
+            <summary>
+            停车场事件推送
+            </summary>
+        </member>
+        <member name="F:DocomSDK.API.EventNotify.FaceSubcribe_Event">
+            <summary>
+            人脸识事件推送
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.IPlatformAPI">
+            <summary>
+            平台接口
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.IPlatformAPI.GetApiList(DocomSDK.API.PlatformAccount)">
+            <summary>
+            获取系统中的功能性API地址列表
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.IPlatformAPI.GetApiInfo(DocomSDK.API.QueryAPIInfo)">
+            <summary>
+            查询API信息
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.IPlatformAPI.GetSubscribeList(DocomSDK.API.PlatformAccount)">
+            <summary>
+            获取订阅列表
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.IPlatformAPI.SubscribeEvent(DocomSDK.API.SubscribeObject)">
+            <summary>
+            订阅某事件
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.IPlatformAPI.UnSubscribeEvent(DocomSDK.API.UnSubscribeObject)">
+            <summary>
+            取消订阅某事件
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.IPlatformAPI.GetUserToken(DocomSDK.API.PlatformAccount)">
+            <summary>
+            获取用户的Token
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.API.QueryAPIInfo">
+            <summary>
+            查询API信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.QueryAPIInfo.UserInfo">
+            <summary>
+            帐号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.QueryAPIInfo.ApiType">
+            <summary>
+            API类型
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.SubscribeObject">
+            <summary>
+            订阅对象
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.SubscribeObject.UserInfo">
+            <summary>
+            帐号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.SubscribeObject.EventInfo">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.UnSubscribeObject">
+            <summary>
+            取消订阅对象
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.UnSubscribeObject.UserInfo">
+            <summary>
+            帐号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.UnSubscribeObject.EventType">
+            <summary>
+            事件类型
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.SubscribeInfo">
+            <summary>
+            订阅的信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.SubscribeInfo.EventType">
+            <summary>
+            事件类型
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.SubscribeInfo.URL">
+            <summary>
+            接收地址
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.SubscribeInfo.LastUpdate">
+            <summary>
+            最后更新时间
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.SubscribeInfo.CreateDate">
+            <summary>
+            创建日期
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.SubscribeInfo.StartTime">
+            <summary>
+            开始生效时间
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.SubscribeInfo.EndTime">
+            <summary>
+            结束生效时间
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.PlatformAccount">
+            <summary>
+            平台帐号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.PlatformAccount.UserName">
+            <summary>
+            帐号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.PlatformAccount.Password">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.APIInfo">
+            <summary>
+            API的相关信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.APIInfo.ApiType">
+            <summary>
+            API的类型
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.APIInfo.Name">
+            <summary>
+            API名称
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.APIInfo.ProviderUrl">
+            <summary>
+            API的地址
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.APIInfo.Remarks">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.PlatformAPI">
+            <summary>
+            平台API访问对口
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.PlatformAPI.#ctor(System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="url"></param>
+        </member>
+        <member name="M:DocomSDK.API.PlatformAPI.GetApiInfo(DocomSDK.API.QueryAPIInfo)">
+            <summary>
+            查询API信息
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.PlatformAPI.GetApiList(DocomSDK.API.PlatformAccount)">
+            <summary>
+            获取系统中的功能性API地址列表
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.PlatformAPI.GetSubscribeList(DocomSDK.API.PlatformAccount)">
+            <summary>
+            获取订阅列表
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.PlatformAPI.GetUserToken(DocomSDK.API.PlatformAccount)">
+            <summary>
+            获取用户的Token
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.PlatformAPI.SubscribeEvent(DocomSDK.API.SubscribeObject)">
+            <summary>
+            订阅某事件
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.PlatformAPI.UnSubscribeEvent(DocomSDK.API.UnSubscribeObject)">
+            <summary>
+            取消订阅某事件
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.PostClient.Post``1(System.String,``0)">
+            <summary>
+            推送数据，不等待返回值 
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="ActionName"></param>
+            <param name="obj"></param>
+        </member>
+        <member name="T:DocomSDK.API.TTS.DocomTTS">
+            <summary>
+            道控文字转语音接口调用
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.TTS.DocomTTS.#ctor(System.String,System.String)">
+            <summary>
+            构造
+            </summary>
+            <param name="baseURL"></param>
+            <param name="token"></param>
+        </member>
+        <member name="M:DocomSDK.API.TTS.DocomTTS.TTS_Convert(DocomSDK.API.TTS.TTSRequest)">
+            <summary>
+            将文字转换为语音文件
+            </summary>
+            <param name="request"></param>
+            <returns>返回wav的数据，BASE64编码</returns>
+        </member>
+        <member name="T:DocomSDK.API.TTS.IDocomTTS">
+            <summary>
+            道控TTS文字转语音接口
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.TTS.IDocomTTS.TTS_Convert(DocomSDK.API.TTS.TTSRequest)">
+            <summary>
+            将文字转换为语音数据
+            </summary>
+            <param name="Text"></param>
+            <returns>数据内容为Base64编码的wav文件内容</returns>
+        </member>
+        <member name="T:DocomSDK.API.TTS.TTSRequest">
+            <summary>
+            TTS转换请求
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.TTS.TTSRequest.Text">
+            <summary>
+            需要转换的文字
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Vena.IVenaOCR">
+            <summary>
+            掌静脉识别接口
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.Vena.IVenaOCR.MatchVenaFeature(DocomSDK.API.Vena.VenaObject)">
+            <summary>
+            比对两个特征，返回相似度值
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Vena.IVenaOCR.SearchByVena(DocomSDK.API.Vena.VenaSearchObject)">
+            <summary>
+            根据掌静脉特征搜索相关人员信息
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.API.Vena.VenaSearchResult">
+            <summary>
+            掌静脉特征搜索结果
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaSearchResult.Value">
+            <summary>
+            相似度
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaSearchResult.Info">
+            <summary>
+            特征对应的用户数据
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Vena.SexType">
+            <summary>
+            性别类型
+            </summary>
+        </member>
+        <member name="F:DocomSDK.API.Vena.SexType.Man">
+            <summary>
+            男人
+            </summary>
+        </member>
+        <member name="F:DocomSDK.API.Vena.SexType.Woman">
+            <summary>
+            女人
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Vena.VenaInfo">
+            <summary>
+            掌静脉数据
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaInfo.VenaID">
+            <summary>
+            数据ID标识
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaInfo.GroupID">
+            <summary>
+            所属特征组ID
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaInfo.UserName">
+            <summary>
+            名字
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaInfo.Number">
+            <summary>
+            自定义号码
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaInfo.Sex">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaInfo.Address">
+            <summary>
+            地址
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaInfo.Telphone">
+            <summary>
+            电话
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaInfo.EMail">
+            <summary>
+            邮箱
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaInfo.Birthday">
+            <summary>
+            出生日期
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaInfo.PlaceOfBirth">
+            <summary>
+            籍贯
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaInfo.IdentityNumber">
+            <summary>
+            身份证号码
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaInfo.Company">
+            <summary>
+            工作单位
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaInfo.Department">
+            <summary>
+            所属部门或职务
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaInfo.Remarks">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaInfo.FeatureInfo">
+            <summary>
+            特征数据
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Vena.VenaFeature">
+            <summary>
+            掌静脉特征
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaFeature.Data">
+            <summary>
+            特征信息数据(BASE64编码)
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Vena.VenaSearchObject">
+            <summary>
+            掌静脉搜索条件
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaSearchObject.FeatureInfo">
+            <summary>
+            特征
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaSearchObject.MinValue">
+            <summary>
+            要求最低阀值 
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaSearchObject.MaxCount">
+            <summary>
+            要求返回的数据条数(最大值)
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Vena.VenaObject">
+            <summary>
+            静脉对比请求对象
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaObject.Feature1">
+            <summary>
+            特征1
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaObject.Feature2">
+            <summary>
+            特征2
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Vena.IVenaStore">
+            <summary>
+            掌静脉存储接口
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.Vena.IVenaStore.CreateVenaGroup(DocomSDK.API.Vena.VenaGroupInfo)">
+            <summary>
+            创建掌静脉特征组
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Vena.IVenaStore.DeleteVenaGroup(DocomSDK.API.Vena.VenaGroupInfo)">
+            <summary>
+            删除掌静脉特征组
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Vena.IVenaStore.EditVenaGroup(DocomSDK.API.Vena.VenaGroupInfo)">
+            <summary>
+            编辑掌静脉特征组
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Vena.IVenaStore.GetAllVenaGroup(DocomSDK.API.Vena.PageInfo)">
+            <summary>
+            获取掌静脉特征组列表
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Vena.IVenaStore.AddVenaFeatureInfo(DocomSDK.API.Vena.VenaInfo)">
+            <summary>
+            添加特征数据
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Vena.IVenaStore.EditVenaFeatureInfo(DocomSDK.API.Vena.VenaInfo)">
+            <summary>
+            编辑特征数据
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Vena.IVenaStore.DeleteVenaFeatureInfo(DocomSDK.API.Vena.VenaInfo)">
+            <summary>
+            删除特征数据
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Vena.IVenaStore.GetFeatureInfoList(DocomSDK.API.Vena.VenaPageInfo)">
+            <summary>
+            获取特征数据列表
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.API.Vena.VenaGroupList">
+            <summary>
+            掌静脉组列表
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaGroupList.TotalCount">
+            <summary>
+            总条数
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaGroupList.Page">
+            <summary>
+            当前页信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaGroupList.Data">
+            <summary>
+            本页数据集合
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Vena.VenaFeatureList">
+            <summary>
+            掌静脉特征列表
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaFeatureList.TotalCount">
+            <summary>
+            总条数
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaFeatureList.Page">
+            <summary>
+            当前页信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaFeatureList.Data">
+            <summary>
+            本页数据集合
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Vena.PageInfo">
+            <summary>
+            掌静脉组分页参数
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.PageInfo.PageIndex">
+            <summary>
+            第n页 n>=1
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.PageInfo.PageSize">
+            <summary>
+            每页的条数
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Vena.VenaPageInfo">
+            <summary>
+            掌静脉特征分页参数
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaPageInfo.GroupID">
+            <summary>
+            目标组（0=所有组)
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Vena.VenaGroupInfo">
+            <summary>
+            掌静脉数据组
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaGroupInfo.GroupID">
+            <summary>
+            组ID
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaGroupInfo.GroupName">
+            <summary>
+            组名
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaGroupInfo.Remarks">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:DocomSDK.API.Vena.VenaGroupInfo.CreateDate">
+            <summary>
+            创建日期
+            </summary>
+        </member>
+        <member name="T:DocomSDK.API.Vena.VenaOCRAPI">
+            <summary>
+            掌静脉特征搜索匹配调用接口
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.Vena.VenaOCRAPI.#ctor(System.String,System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="url">API地址</param>
+            <param name="token">开发者TOKEN</param>
+        </member>
+        <member name="M:DocomSDK.API.Vena.VenaOCRAPI.MatchVenaFeature(DocomSDK.API.Vena.VenaObject)">
+            <summary>
+            比对两个特征，返回相似度值
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Vena.VenaOCRAPI.SearchByVena(DocomSDK.API.Vena.VenaSearchObject)">
+            <summary>
+            根据掌静脉特征搜索相关人员信息
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.API.Vena.VenaStoreAPI">
+            <summary>
+            掌静脉特征存储接口
+            </summary>
+        </member>
+        <member name="M:DocomSDK.API.Vena.VenaStoreAPI.#ctor(System.String,System.String)">
+            <summary>
+            构造方法
+            </summary>
+            <param name="url"></param>
+            <param name="token"></param>
+        </member>
+        <member name="M:DocomSDK.API.Vena.VenaStoreAPI.AddVenaFeatureInfo(DocomSDK.API.Vena.VenaInfo)">
+            <summary>
+            添加特征数据
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Vena.VenaStoreAPI.CreateVenaGroup(DocomSDK.API.Vena.VenaGroupInfo)">
+            <summary>
+            创建掌静脉特征组
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Vena.VenaStoreAPI.DeleteVenaFeatureInfo(DocomSDK.API.Vena.VenaInfo)">
+            <summary>
+            删除特征数据
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Vena.VenaStoreAPI.DeleteVenaGroup(DocomSDK.API.Vena.VenaGroupInfo)">
+            <summary>
+            删除掌静脉特征组
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Vena.VenaStoreAPI.EditVenaFeatureInfo(DocomSDK.API.Vena.VenaInfo)">
+            <summary>
+            编辑特征数据
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Vena.VenaStoreAPI.EditVenaGroup(DocomSDK.API.Vena.VenaGroupInfo)">
+            <summary>
+            编辑掌静脉特征组
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Vena.VenaStoreAPI.GetAllVenaGroup(DocomSDK.API.Vena.PageInfo)">
+            <summary>
+            获取掌静脉特征组列表
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.API.Vena.VenaStoreAPI.GetFeatureInfoList(DocomSDK.API.Vena.VenaPageInfo)">
+            <summary>
+            获取特征数据列表
+            </summary>
+            <param name="info"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.Cabinet.ActivateResult">
+            <summary>
+            卡号结果 激活/取消激活 
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.ActivateResult.Success">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.ActivateResult.Fail">
+            <summary>
+            失败
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.ActivateResult.UnAllot">
+            <summary>
+            卡未分配
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.ActivateResult.Locked">
+            <summary>
+            卡已锁定
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.ActivateResult.Corrupted">
+            <summary>
+            此箱柜锁已损坏
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.ActivateResult.NotClean">
+            <summary>
+            箱未清洁
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Cabinet.BindInfo">
+            <summary>
+            绑定卡号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.BindInfo.DeviceKey">
+            <summary>
+            设备唯一KEY
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.BindInfo.BoxNumber">
+            <summary>
+            绑定的柜子
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.BindInfo.CardNumber">
+            <summary>
+            卡号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.BindInfo.Operation">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Cabinet.BoxDoorStatus">
+            <summary>
+            柜子的状态
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.BoxDoorStatus.DoorIndex">
+            <summary>
+            门号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.BoxDoorStatus.DoorLock">
+            <summary>
+            门锁状态
+            </summary>        
+        </member>
+        <member name="P:DocomSDK.Cabinet.BoxDoorStatus.Res">
+            <summary>
+            是否有物品
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.BoxDoorStatus.Locking">
+            <summary>
+            是否锁定
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.BoxDoorStatus.Binding">
+            <summary>
+            是否绑定
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Cabinet.Breakdown">
+            <summary>
+            门锁操作
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.Breakdown.DeviceSN">
+            <summary>
+            设备序列号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.Breakdown.CardNumber">
+            <summary>
+            卡号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.Breakdown.BoxIndex">
+            <summary>
+            箱号索引
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.Breakdown.State">
+            <summary>
+            箱子的损坏状况
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.BreakdownState.Spoil">
+            <summary>
+            损坏
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.BreakdownState.Normal">
+            <summary>
+            正常
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.CabinetCommand.BindCardInfo">
+            <summary>
+            卡号绑定和解绑
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.CabinetCommand.OpenBoxDoor">
+            <summary>
+            柜子开关门
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.CabinetCommand.LockBoxDoor">
+            <summary>
+            锁定和解锁
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.CabinetCommand.ConfigAdminCard">
+            <summary>
+            配置管理员
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "F:DocomSDK.Cabinet.CabinetCommand.ConfigDateTime" -->
+        <member name="F:DocomSDK.Cabinet.CabinetCommand.QueryBoxStatus">
+            <summary>
+            查询柜子格子状态
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.CabinetCommand.QueryCardStatus">
+            <summary>
+            查询卡状态
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.CabinetCommand.On_ReportUpload">
+            <summary>
+            终端主动上报日志
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.CabinetCommand.On_InvalidCardUpload">
+            <summary>
+            无效卡号上传
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.CabinetCommand.On_UploadDoorStatus">
+            <summary>
+            上传柜门状态
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.CabinetCommand.SetClearBox">
+            <summary>
+            设置清箱
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.CabinetCommand.ActivateCard">
+            <summary>
+            设置卡号激活
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.CabinetCommand.SetCleanCard">
+            <summary>
+            设置清洁卡
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.CabinetCommand.On_CleanLog">
+            <summary>
+            上报清洁卡记录
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.CabinetCommand.On_DoorBreakdown">
+            <summary>
+            上报门锁损坏状态
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.CabinetCommand.QueryAllBoxStatus">
+            <summary>
+            查询所有箱子状态
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.CabinetResult`1.State">
+            <summary>
+            操作结果
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.CabinetResult`1.Description">
+            <summary>
+            结果描述
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.CabinetResult`1.DeviceKey">
+            <summary>
+            设备KEY
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Cabinet.CardConfig">
+            <summary>
+            卡号的配置
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.CardConfig.DeviceSN">
+            <summary>
+            设备序列号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.CardConfig.Number">
+            <summary>
+            卡号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.CardConfig.State">
+            <summary>
+            准备要进行的操作
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Cabinet.CleanCardResult">
+            <summary>
+            设置清洁卡结果
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.CleanCardResult.Success">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.CleanCardResult.Fail">
+            <summary>
+            失败
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.CleanCardResult.Used">
+            <summary>
+            己使用
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Cabinet.CleanLog">
+            <summary>
+            清洁卡记录
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.CleanLog.DeviceSN">
+            <summary>
+            设备序列号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.CleanLog.CardNumber">
+            <summary>
+            卡号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.CleanLog.Boxs">
+            <summary>
+            存放清洁卡打开所有箱柜号
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Cabinet.ConfigState">
+            <summary>
+            卡号状态
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.ConfigState.Cancel">
+            <summary>
+            取消
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.ConfigState.Config">
+            <summary>
+            配置
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.CardBind.Bind">
+            <summary>
+            绑定
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.CardBind.Cancel">
+            <summary>
+            取消绑定
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.BoxStateType.Normal">
+            <summary>
+            正常
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.BoxStateType.Lock">
+            <summary>
+            锁定
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.BoxStateType.Invalid">
+            <summary>
+            锁定
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.BoxDoorDoorControl.Open">
+            <summary>
+            开门
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.BoxDoorDoorControl.Lock">
+            <summary>
+            锁定
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.BoxDoorDoorControl.UnLock">
+            <summary>
+            解锁
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Cabinet.ICabinet">
+            <summary>
+            水公园交互接口
+            </summary>
+        </member>
+        <member name="M:DocomSDK.Cabinet.ICabinet.BindCardInfo(DocomSDK.Cabinet.BindInfo)">
+            <summary>
+            卡号绑定和解绑
+            </summary>
+            <param name="cardNo"></param>
+            <param name="BoxNumber"></param>
+            <param name="op"></param>
+        </member>
+        <member name="M:DocomSDK.Cabinet.ICabinet.ControlBoxDoor(DocomSDK.Cabinet.DoorControl)">
+            <summary>
+            柜子开关锁门
+            </summary>
+            <param name="BoxNumber"></param>
+            <param name="op"></param>
+        </member>
+        <member name="M:DocomSDK.Cabinet.ICabinet.ConfigAdminCard(DocomSDK.Cabinet.AdminConfig)">
+            <summary>
+            配置管理员
+            </summary>
+            <param name="cardNo"></param>
+            <param name="op"></param>
+        </member>
+        <member name="M:DocomSDK.Cabinet.ICabinet.ConfigDateTime(DocomSDK.Cabinet.TimeConfig)">
+            <summary>
+            配置日期时间
+            </summary>
+            <param name="Time"></param>
+        </member>
+        <member name="M:DocomSDK.Cabinet.ICabinet.QueryBoxStatus(DocomSDK.Cabinet.QueryStatus)">
+            <summary>
+            查询柜子格子状态
+            </summary>
+            <param name="BoxNumber"></param>
+        </member>
+        <member name="M:DocomSDK.Cabinet.ICabinet.QueryCardStatus(DocomSDK.Cabinet.QueryCard)">
+            <summary>
+            查询卡状态
+            </summary>
+            <param name="cardNo"></param>
+        </member>
+        <member name="M:DocomSDK.Cabinet.ICabinet.QueryAllBoxStatus(DocomSDK.Cabinet.CabinetDevice)">
+            <summary>
+            查询所有柜门的状态
+            </summary>
+            <param name="DeviceKey"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.Cabinet.ICabinet.SetClearBox(DocomSDK.Cabinet.CabinetDevice)">
+            <summary>
+            设置清箱
+            </summary>
+            <param name="device">目标设备</param>
+            <returns>成功  ||  失败</returns>
+        </member>
+        <member name="M:DocomSDK.Cabinet.ICabinet.ActivateCard(DocomSDK.Cabinet.CardConfig)">
+            <summary>
+            设置卡号激活/取消卡号激活
+            </summary>
+        </member>
+        <member name="M:DocomSDK.Cabinet.ICabinet.SetCleanCard(DocomSDK.Cabinet.CardConfig)">
+            <summary>
+            设置或取消清洁卡
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.Cabinet.DoorControl">
+            <summary>
+            控制柜门的开锁
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.DoorControl.DeviceKey">
+            <summary>
+            设备唯一KEY
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.DoorControl.BoxNumber">
+            <summary>
+            绑定的柜子
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.DoorControl.Operation">
+            <summary>
+            操作类型
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Cabinet.ICabinetNotify">
+            <summary>
+            柜子主动上报通知
+            </summary>
+        </member>
+        <member name="M:DocomSDK.Cabinet.ICabinetNotify.On_ReportUpload(DocomSDK.Cabinet.CabinetResult{DocomSDK.Cabinet.ReportInfo})">
+            <summary>
+            终端主动上报日志
+            </summary>
+            <param name="info"></param>
+        </member>
+        <member name="M:DocomSDK.Cabinet.ICabinetNotify.On_InvalidCardUpload(DocomSDK.Cabinet.CabinetResult{System.String})">
+            <summary>
+            无效卡号上传
+            </summary>
+            <param name="cardNo"></param>
+        </member>
+        <member name="M:DocomSDK.Cabinet.ICabinetNotify.On_UploadDoorStatus(DocomSDK.Cabinet.CabinetResult{System.Collections.Generic.List{DocomSDK.Cabinet.BoxDoorStatus}})">
+            <summary>
+            柜门状态上传
+            </summary>
+            <param name="status"></param>
+        </member>
+        <member name="M:DocomSDK.Cabinet.ICabinetNotify.On_CleanLog(DocomSDK.Cabinet.CabinetResult{DocomSDK.Cabinet.CleanLog})">
+            <summary>
+            上报清洁卡记录
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="M:DocomSDK.Cabinet.ICabinetNotify.On_DoorBreakdown(DocomSDK.Cabinet.Breakdown)">
+            <summary>
+            上报门锁损坏状态
+            </summary>
+            <param name="obj"></param>
+        </member>
+        <member name="F:DocomSDK.Cabinet.ResultCode.OK">
+            <summary>
+            成功
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.ResultCode.Error">
+            <summary>
+            出错
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.ResultCode.UseOf">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.ResultCode.InvalidBox">
+            <summary>
+            无效箱号
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.ResultCode.InvalidTime">
+            <summary>
+            无效时间
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.ResultCode.InvalidCard">
+            <summary>
+            无效卡
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.ResultCode.IsAdminCard">
+            <summary>
+            管理员卡
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Cabinet.ResultCode.CleanCard">
+            <summary>
+            清洁卡
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Cabinet.TimeConfig.Time">
+            <summary>
+            yyyy-MM-dd hh:mm:ss
+            </summary>
+        </member>
+        <member name="T:DocomSDK.ProductType">
+            <summary>
+            产品类型
+            </summary>    
+        </member>
+        <member name="F:DocomSDK.ProductType.Ticket">
+            <summary>
+            票务闸机
+            </summary>        
+        </member>
+        <member name="F:DocomSDK.ProductType.Cabinet">
+            <summary>
+            水公园柜子
+            </summary>        
+        </member>
+        <member name="F:DocomSDK.ProductType.TVM">
+            <summary>
+            TVM自动售取票机
+            </summary>        
+        </member>
+        <member name="F:DocomSDK.ProductType.M4_ExitChannel">
+            <summary>
+            M4出口闸机
+            </summary>        
+        </member>
+        <member name="F:DocomSDK.ProductType.SelfCabinet">
+            <summary>
+            自助储物柜
+            </summary>        
+        </member>
+        <member name="T:DocomSDK.TcpDirection">
+            <summary>
+            通信数据方向
+            </summary>
+        </member>
+        <member name="F:DocomSDK.TcpDirection.Request">
+            <summary>
+            请求
+            </summary>        
+        </member>
+        <member name="F:DocomSDK.TcpDirection.Response">
+            <summary>
+            应答
+            </summary>        
+        </member>
+        <member name="T:DocomSDK.Function">
+            <summary>
+            静态功能函数
+            </summary>
+        </member>
+        <member name="M:DocomSDK.Function.SerializeJSON``1(``0)">
+            <summary>
+            将实体类序列化为JSON
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.Function.DeserializeJSON``1(System.String)">
+            <summary>
+            反序列化JSON
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="json"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.Function.Base64_Encode(System.String)">
+            <summary>
+            将字符串编码为base64
+            </summary>
+            <param name="data"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.Function.Base64_Decode(System.String)">
+            <summary>
+            解码base64编码
+            </summary>
+            <param name="base64"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.Function.getPacketSN">
+            <summary>
+            生成数据包唯一号
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.M4_ExitChannel.ExitChannelEvent">
+            <summary>
+            出闸事件
+            </summary>
+        </member>
+        <member name="P:DocomSDK.M4_ExitChannel.ExitChannelEvent.DeviceKey">
+            <summary>
+            设备唯一号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.M4_ExitChannel.ExitChannelEvent.Time">
+            <summary>
+            事件时间截
+            </summary>
+        </member>
+        <member name="P:DocomSDK.M4_ExitChannel.ExitChannelEvent.Count">
+            <summary>
+            人数
+            </summary>
+        </member>
+        <member name="P:DocomSDK.M4_ExitChannel.ExitChannelEvent.WorkMode">
+            <summary>
+            工作模式
+            </summary>
+        </member>
+        <member name="P:DocomSDK.M4_ExitChannel.ExitChannelEvent.TicketType">
+            <summary>
+            票类型
+            </summary>
+        </member>
+        <member name="P:DocomSDK.M4_ExitChannel.ExitChannelEvent.TicketNo">
+            <summary>
+            票号码
+            </summary>
+        </member>
+        <member name="T:DocomSDK.M4_ExitChannel.ExitChannelEvent_Answer">
+            <summary>
+            出闸应答
+            </summary>
+        </member>
+        <member name="M:DocomSDK.M4_ExitChannel.IM4ExitChannel.On_ExitChannelEvent(DocomSDK.M4_ExitChannel.ExitChannelEvent)">
+            <summary>
+            设备上报出闸事件
+            </summary> 
+        </member>
+        <member name="M:DocomSDK.M4_ExitChannel.IM4ExitChannel.On_SynchroCount(DocomSDK.M4_ExitChannel.SynchroCount)">
+            <summary>
+            设备请求同步计数
+            </summary>
+        </member>
+        <member name="M:DocomSDK.M4_ExitChannel.IM4ExitChannel.On_CheckTicket(DocomSDK.M4_ExitChannel.M4Ticket)">
+            <summary>
+            设备请求验票
+            </summary>
+        </member>
+        <member name="M:DocomSDK.M4_ExitChannel.IM4ExitChannel.On_SynchroConfig(DocomSDK.M4_ExitChannel.SynchroConfig)">
+            <summary>
+            设备请求同步配置信息
+            </summary>
+        </member>
+        <member name="M:DocomSDK.M4_ExitChannel.IM4ExitChannel.On_SynchroTime(DocomSDK.M4_ExitChannel.SynchroTime)">
+            <summary>
+            设备请求同步时间
+            </summary>
+        </member>
+        <member name="M:DocomSDK.M4_ExitChannel.IM4ExitChannel_Control.ClearCount(DocomSDK.M4_ExitChannel.SynchroCount)">
+            <summary>
+            下发清除计数
+            </summary>
+        </member>
+        <member name="M:DocomSDK.M4_ExitChannel.IM4ExitChannel_Control.EnforceShutdownChannel(DocomSDK.M4_ExitChannel.ShutdownChannel)">
+            <summary>
+            下发强制落杆指令
+            </summary>
+        </member>
+        <member name="T:DocomSDK.M4_ExitChannel.M4WorkMode">
+            <summary>
+            M4 工作模式
+            </summary>    
+        </member>
+        <member name="F:DocomSDK.M4_ExitChannel.M4WorkMode.TicketMode">
+            <summary>
+            检票模式
+            </summary>        
+        </member>
+        <member name="F:DocomSDK.M4_ExitChannel.M4WorkMode.ExitMode">
+            <summary>
+            出口模式
+            </summary>        
+        </member>
+        <member name="F:DocomSDK.M4_ExitChannel.M4WorkMode.ShutdownMode">
+            <summary>
+            落杆模式
+            </summary>        
+        </member>
+        <member name="T:DocomSDK.M4_ExitChannel.M4_ChannelCommand">
+            <summary>
+            M4闸机主信令
+            </summary>
+        </member>
+        <member name="F:DocomSDK.M4_ExitChannel.M4_ChannelCommand.UploadChannelEvent">
+            <summary>
+            设备上报出闸事件
+            </summary>
+        </member>
+        <member name="F:DocomSDK.M4_ExitChannel.M4_ChannelCommand.UploadChannelAnswer">
+            <summary>
+            出闸事件应答
+            </summary>
+        </member>
+        <member name="F:DocomSDK.M4_ExitChannel.M4_ChannelCommand.SynchroCount">
+            <summary>
+            同步计数
+            </summary>
+        </member>
+        <member name="F:DocomSDK.M4_ExitChannel.M4_ChannelCommand.SynchroCountAnswer">
+            <summary>
+            同步计数应答
+            </summary>
+        </member>
+        <member name="F:DocomSDK.M4_ExitChannel.M4_ChannelCommand.ClearCount">
+            <summary>
+            清空计数
+            </summary>
+        </member>
+        <member name="F:DocomSDK.M4_ExitChannel.M4_ChannelCommand.ClearCountAnswer">
+            <summary>
+            清空计数应答
+            </summary>
+        </member>
+        <member name="F:DocomSDK.M4_ExitChannel.M4_ChannelCommand.CheckTicket">
+            <summary>
+            检票请求
+            </summary>
+        </member>
+        <member name="F:DocomSDK.M4_ExitChannel.M4_ChannelCommand.CheckTicketAnswer">
+            <summary>
+            检票应答
+            </summary>
+        </member>
+        <member name="F:DocomSDK.M4_ExitChannel.M4_ChannelCommand.EnforceShutdown">
+            <summary>
+            强制落杆
+            </summary>
+        </member>
+        <member name="F:DocomSDK.M4_ExitChannel.M4_ChannelCommand.EnforceShutdownAnswer">
+            <summary>
+            强制落杆应答
+            </summary>
+        </member>
+        <member name="F:DocomSDK.M4_ExitChannel.M4_ChannelCommand.SynchroConfig">
+            <summary>
+            同步配置
+            </summary>
+        </member>
+        <member name="F:DocomSDK.M4_ExitChannel.M4_ChannelCommand.SynchroConfigAndwer">
+            <summary>
+            同步配置应答
+            </summary>
+        </member>
+        <member name="F:DocomSDK.M4_ExitChannel.M4_ChannelCommand.SynchroTime">
+            <summary>
+            同步时间
+            </summary>
+        </member>
+        <member name="F:DocomSDK.M4_ExitChannel.M4_ChannelCommand.SynchroTimeAndwer">
+            <summary>
+            同步时间应答
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Protocol">
+            <summary>
+            通信协议
+            </summary>
+        </member>
+        <member name="M:DocomSDK.Protocol.#ctor">
+            <summary>
+            构造
+            </summary>
+        </member>
+        <member name="M:DocomSDK.Protocol.Append(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            添加数据到协议解析
+            </summary>
+            <param name="data"></param>
+            <param name="offset"></param>
+            <param name="count"></param>
+        </member>
+        <member name="M:DocomSDK.Protocol.Clear">
+            <summary>
+            清零缓存
+            </summary>
+        </member>
+        <member name="M:DocomSDK.Protocol.Split">
+            <summary>
+            拆包
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.Protocol.encrypt(System.Byte[]@)">
+            <summary>
+            加解密
+            </summary>
+            <param name="data"></param>
+        </member>
+        <member name="M:DocomSDK.Protocol.encrypt(System.UInt32,System.Byte[]@,System.Int32)">
+            <summary>
+            加解密函数，自逆
+            </summary>
+            <param name="key"></param>
+            <param name="buffer"></param>
+            <param name="size"></param>
+        </member>
+        <member name="M:DocomSDK.Protocol.MakePacket``1(DocomSDK.TcpDirection,DocomSDK.ProductType,System.Int32,System.String,System.String,``0)">
+            <summary>
+            组建数据包
+            </summary>
+            <param name="direct">数据包的方向</param>
+            <param name="type">产品类型</param>
+            <param name="commandID">主信令</param>
+            <param name="time">数据包的时间截 yyyyMMddhhMMss</param>
+            <param name="deviceSN">设备唯一序列号</param>
+            <param name="data">数据包的实际内容</param>
+            <returns></returns>
+            <example>
+            包格式  [方向，产品类型,主信令，yyyyMMddhhMMss,deviceSN,JSON数据体]
+            </example>
+        </member>
+        <member name="M:DocomSDK.Protocol.Dispose">
+            <summary>
+            构析
+            </summary>
+        </member>
+        <member name="T:DocomSDK.SelfCabinet.AccessEvent">
+            <summary>
+            盒子事件
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.AccessEvent.Device">
+            <summary>
+            设备对象
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.AccessEvent.Box">
+            <summary>
+            盒子对象
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.AccessEvent.OrderID">
+            <summary>
+            订单ID
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.AccessEvent.InTime">
+            <summary>
+            存入时间
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.AccessEvent.OutTime">
+            <summary>
+            取出时间
+            </summary>
+        </member>
+        <member name="T:DocomSDK.SelfCabinet.AchieveBox">
+            <summary>
+            预约盒子
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.AchieveBox.DeviceSN">
+            <summary>
+            柜子唯一序列号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.AchieveBox.OrderID">
+            <summary>
+            订单号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.AchieveBox.BoxID">
+            <summary>
+            盒子编号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.AchieveBox.ReserveDate">
+            <summary>
+            预约的时间
+            </summary>
+        </member>
+        <member name="T:DocomSDK.SelfCabinet.RemoteLockBox">
+            <summary>
+            预约盒子
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.RemoteLockBox.LockState">
+            <summary>
+            锁定true或解锁false   
+            </summary>
+        </member>
+        <member name="T:DocomSDK.SelfCabinet.ActionCode">
+            <summary>
+            操作行为
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.ActionCode.WORKMODE">
+            <summary>
+            设置工作模式
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.ActionCode.CLEARBOX">
+            <summary>
+            清理打开柜子
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.ActionCode.ALLOTBOX">
+            <summary>
+            分配固定柜
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.ActionCode.UNALLOTBOX">
+            <summary>
+            取消分配箱子
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.ActionCode.LOCKBOX">
+            <summary>
+            锁定柜子
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.ActionCode.UNLOCKBOX">
+            <summary>
+            解锁柜子
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.ActionCode.OTHERS">
+            <summary>
+            其他行为设置
+            </summary>
+        </member>
+        <member name="T:DocomSDK.SelfCabinet.AdminAction">
+            <summary>
+            管理员行为
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.AdminAction.Device">
+            <summary>
+            设备对象
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.AdminAction.CardNumber">
+            <summary>
+            管理员卡号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.AdminAction.OrderNumber">
+            <summary>
+            订单号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.AdminAction.BoxNumber">
+            <summary>
+            箱子号码	--可能为空
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.AdminAction.ActCode">
+            <summary>
+            操作行为
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.AdminAction.Time">
+            <summary>
+            操作时间
+            </summary>
+        </member>
+        <member name="T:DocomSDK.SelfCabinet.BoxPoint">
+            <summary>
+             坐标
+            </summary>
+        </member>
+        <member name="T:DocomSDK.SelfCabinet.BoxState">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.BoxState.Free">
+            <summary>
+            空闲
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.BoxState.Used">
+            <summary>
+            己使用
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.BoxState.Lock">
+            <summary>
+            锁定
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.BoxState.Booking">
+            <summary>
+            约定
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.BoxState.Fixed">
+            <summary>
+            固定
+            </summary>
+        </member>
+        <member name="T:DocomSDK.SelfCabinet.BoxType">
+            <summary>
+            盒子的类型
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.BoxType.Small">
+            <summary>
+            小盒子
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.BoxType.Normal">
+            <summary>
+            中盒子
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.BoxType.Large">
+            <summary>
+            大盒子
+            </summary>
+        </member>
+        <member name="T:DocomSDK.SelfCabinet.ByFrequencyMode">
+            <summary>
+            按次收费模式
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.ByFrequencyMode.Small_Price">
+            <summary>
+            小柜子价格
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.ByFrequencyMode.Normal_Price">
+            <summary>
+            中柜子价格
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.ByFrequencyMode.Large_Price">
+            <summary>
+            大柜子价格
+            </summary>
+        </member>
+        <member name="T:DocomSDK.SelfCabinet.ByTimeMode">
+            <summary>
+            按时段收费模式
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.ByTimeMode.FreeTime">
+            <summary>
+            免费时长
+            </summary>
+        </member>
+        <member name="T:DocomSDK.SelfCabinet.CabinetBox">
+            <summary>
+            盒子对象
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.CabinetBox.ID">
+            <summary>
+            盒子ID序号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.CabinetBox.Type">
+            <summary>
+            盒子类型
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.CabinetBox.State">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.CabinetBox.Location">
+            <summary>
+            盒子在柜子上排列的位置
+            </summary>
+        </member>
+        <member name="T:DocomSDK.SelfCabinet.ChargingMode">
+            <summary>
+            收费模式
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.ChargingMode.ByFrequency">
+            <summary>
+            按次收费
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.ChargingMode.ByTime">
+            <summary>
+            按时收费
+            </summary>
+        </member>
+        <member name="T:DocomSDK.SelfCabinet.ISelfCabinet">
+            <summary>
+            设备主动调用接口
+            </summary>    
+        </member>
+        <member name="M:DocomSDK.SelfCabinet.ISelfCabinet.UploadConfigInfo(DocomSDK.SelfCabinet.SelfCabinetStatus)">
+            <summary>
+            上传柜子信息
+            </summary>        
+        </member>
+        <member name="M:DocomSDK.SelfCabinet.ISelfCabinet.UploadAdminAction(DocomSDK.SelfCabinet.AdminAction)">
+            <summary>
+            管理员行为上传
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.SelfCabinet.ISelfCabinet.UploadCabinetStatus(DocomSDK.SelfCabinet.SelfCabinetStatus)">
+            <summary>
+            柜子状态
+            </summary>        
+        </member>
+        <member name="M:DocomSDK.SelfCabinet.ISelfCabinet.UploadAccessEvent(DocomSDK.SelfCabinet.AccessEvent)">
+            <summary>
+            上传盒子事件
+            </summary>        
+        </member>
+        <member name="M:DocomSDK.SelfCabinet.ISelfCabinet.PaymentMoney(DocomSDK.SelfCabinet.PaymentInfo)">
+            <summary>
+            支付
+            </summary>        
+        </member>
+        <member name="T:DocomSDK.SelfCabinet.ISelfCabinetEvent">
+            <summary>
+            设备被动调用接口
+            </summary>
+        </member>
+        <member name="M:DocomSDK.SelfCabinet.ISelfCabinetEvent.On_Cabinet_Achieve(DocomSDK.SelfCabinet.AchieveBox)">
+            <summary>
+            服务器下发预约箱子指令
+            </summary>        
+        </member>
+        <member name="M:DocomSDK.SelfCabinet.ISelfCabinetEvent.On_Cabinet_RemoteLock(DocomSDK.SelfCabinet.RemoteLockBox)">
+            <summary>
+            远程锁定箱子
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.SelfCabinet.PaymentInfo">
+            <summary>
+            支付
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.PaymentInfo.Device">
+            <summary>
+            来源设备
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.PaymentInfo.Box">
+            <summary>
+            来源盒子
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.PaymentInfo.OrderID">
+            <summary>
+            订单号码
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.PaymentInfo.PayCode">
+            <summary>
+            支付串码
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.PaymentInfo.Price">
+            <summary>
+            金额
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.PaymentInfo.PaymentMode">
+            <summary>
+            支付模式
+            </summary>        
+        </member>
+        <member name="T:DocomSDK.SelfCabinet.ReserveInfo">
+            <summary>
+            预约信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.ReserveInfo.Device">
+            <summary>
+            目标设备
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.ReserveInfo.Box">
+            <summary>
+            目标盒子
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.ReserveInfo.OrderID">
+            <summary>
+            预约订单号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.ReserveInfo.Time">
+            <summary>
+            预约时间
+            </summary>
+        </member>
+        <member name="T:DocomSDK.SelfCabinet.SelfCabinetCommand">
+            <summary>
+            通信指令集
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.SelfCabinetCommand.UploadConfigInfo">
+            <summary>
+            上传柜子信息
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.SelfCabinetCommand.UploadCabinetStatus">
+            <summary>
+            柜子状态
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.SelfCabinetCommand.UploadAccessEvent">
+            <summary>
+            上传盒子事件
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.SelfCabinetCommand.GetReserveInfo">
+            <summary>
+            获取预约信息
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.SelfCabinetCommand.PaymentMoney">
+            <summary>
+            支付
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.SelfCabinetCommand.On_Cabinet_Achieve">
+            <summary>
+            上位机预约事件
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.SelfCabinetCommand.On_Cabinet_RemoteLock">
+            <summary>
+            远程锁定或解锁柜子
+            </summary>
+        </member>
+        <member name="F:DocomSDK.SelfCabinet.SelfCabinetCommand.UploadAdminAction">
+            <summary>
+            上传管理员行为
+            </summary>
+        </member>
+        <member name="T:DocomSDK.SelfCabinet.SelfCabinetDevice">
+            <summary>
+            自助柜设备
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.SelfCabinetDevice.DeviceSN">
+            <summary>
+            设备唯一序列号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.SelfCabinetDevice.IPAddress">
+            <summary>
+            设备地址
+            </summary>
+        </member>
+        <member name="T:DocomSDK.SelfCabinet.SelfCabinetResult`1">
+            <summary>
+            通用返回方式
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.SelfCabinetResult`1.State">
+            <summary>
+            操作结果
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.SelfCabinetResult`1.Msg">
+            <summary>
+            消息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.SelfCabinetResult`1.Time">
+            <summary>
+            时间截
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.SelfCabinetResult`1.Data">
+            <summary>
+            数据内容
+            </summary>
+        </member>
+        <member name="T:DocomSDK.SelfCabinet.SelfCabinetStatus">
+            <summary>
+            柜子整体状态
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.SelfCabinetStatus.Device">
+            <summary>
+            设备对象
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.SelfCabinetStatus.chargingMode">
+            <summary>
+            当前收费模式 
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.SelfCabinetStatus.FreqMode">
+            <summary>
+            按次收费模式的算法
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.SelfCabinetStatus.TimeMode">
+            <summary>
+            按时收费模式的算法 
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.SelfCabinetStatus.MaxLockTime">
+            <summary>
+            柜子的最大锁定时间
+            </summary>
+        </member>
+        <member name="P:DocomSDK.SelfCabinet.SelfCabinetStatus.Boxs">
+            <summary>
+            盒子列表
+            </summary>
+        </member>
+        <member name="T:DocomSDK.TcpConnection">
+            <summary>
+            通信连接对象，底层通信类
+            </summary>
+        </member>
+        <member name="T:DocomSDK.TcpConnection.ConnectionStateChange">
+            <summary>
+            通信连线状态
+            </summary>
+            <param name="cn">通信对象</param>
+            <param name="State">状态，true为在线</param>
+        </member>
+        <member name="E:DocomSDK.TcpConnection.OnConnectionStateChange">
+            <summary>
+            通信连线状态事件
+            </summary>
+        </member>
+        <member name="M:DocomSDK.TcpConnection.Open">
+            <summary>
+            打开连接
+            </summary>
+        </member>
+        <member name="M:DocomSDK.TcpConnection.Protocol_OnPacketArrivals(System.String)">
+            <summary>
+            数据包到达事件
+            </summary>
+            <param name="pack"></param>
+        </member>
+        <member name="P:DocomSDK.TcpConnection.DeviceName">
+            <summary>
+            设备唯一序列号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.TcpConnection.ServerIP">
+            <summary>
+            服务器的IP地址
+            </summary>
+        </member>
+        <member name="P:DocomSDK.TcpConnection.ServerPort">
+            <summary>
+            服务器的端口
+            </summary>
+        </member>
+        <member name="P:DocomSDK.TcpConnection.Timeout">
+            <summary>
+            通信超时值
+            </summary>
+        </member>
+        <member name="P:DocomSDK.TcpConnection.Running">
+            <summary>
+            线程状态
+            </summary>
+        </member>
+        <member name="P:DocomSDK.TcpConnection.Connected">
+            <summary>
+            通信状态
+            </summary>
+        </member>
+        <member name="M:DocomSDK.TcpConnection.Send(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            发送数据出去
+            </summary>
+            <param name="data"></param>
+            <param name="offset"></param>
+            <param name="count"></param>
+        </member>
+        <member name="M:DocomSDK.TcpConnection.SendWaitResponse(System.String,System.String,System.Int32,System.String,System.String@)">
+            <summary>
+            发送数据包，并且等待应答
+            </summary>
+            <param name="pack"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.TcpConnection.SendAnswerPacket``1(System.Int32,System.String,System.String,``0)">
+            <summary>
+            发送应答不需要返回值
+            </summary>
+            <typeparam name="TResponse"></typeparam>
+            <param name="cmd"></param>
+            <param name="key"></param>
+            <param name="deviceName"></param>
+            <param name="response"></param>
+        </member>
+        <member name="M:DocomSDK.TcpConnection.SendPacket``2(``1,System.Int32,System.String,``0@)">
+            <summary>
+            发送数据包，并且等待应答
+            </summary>
+            <typeparam name="TResponse"></typeparam>
+            <typeparam name="TRequest"></typeparam>
+            <param name="quest"></param>
+            <param name="cmd"></param>
+            <param name="response"></param>
+            <returns></returns>
+        </member>
+        <member name="P:DocomSDK.TcpConnection.Type">
+            <summary>
+            产品类型
+            </summary>
+        </member>
+        <member name="M:DocomSDK.TcpConnection.Close">
+            <summary>
+            关闭连接
+            </summary>
+        </member>
+        <member name="M:DocomSDK.TcpConnection.Dispose">
+            <summary>
+            释放销毁资源
+            </summary>
+        </member>
+        <member name="M:DocomSDK.TcpConnection.Dispose(System.Boolean)">
+            <summary>
+            释放销毁资源
+            </summary>
+        </member>
+        <member name="M:DocomSDK.TcpConnection.Finalize">
+            <summary>
+            构析
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Data.CheckTicket_Object">
+            <summary>
+            请求检票
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.CheckTicket_Object.Device">
+            <summary>
+            设备相关信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.CheckTicket_Object.SensorSource">
+            <summary>
+            传感器来源-指明是从什么刷卡设备上刷的票
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.CheckTicket_Object.IsShutdownChannel">
+            <summary>
+            落杆状态
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.CheckTicket_Object.Number">
+            <summary>
+            票据内容
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.CheckTicket_Object.Image">
+            <summary>
+            拍照相片
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Data.FaceDetect">
+            <summary>
+            人脸检测结果提交
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.FaceDetect.Device">
+            <summary>
+            设备相关信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.FaceDetect.Ticket">
+            <summary>
+            票据信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.FaceDetect.Result">
+            <summary>
+            采集结果，成功或失败
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.FaceDetect.Type">
+            <summary>
+            采集的数据类型
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.FaceDetect.Data">
+            <summary>
+            提交的数据
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.FaceDetect.Session">
+            <summary>
+            会话对象
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Data.SubmitWalkPast_Object">
+            <summary>
+            过闸结果
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.SubmitWalkPast_Object.Device">
+            <summary>
+            设备相关信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.SubmitWalkPast_Object.Ticket">
+            <summary>
+            票据信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.SubmitWalkPast_Object.Count">
+            <summary>
+            本次过闸人数
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.SubmitWalkPast_Object.EventDate">
+            <summary>
+            过闸事件的时间截
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.SubmitWalkPast_Object.IsOffline">
+            <summary>
+            是否离线补传
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.SubmitWalkPast_Object.Session">
+            <summary>
+            会话对象
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Data.SubmitFingerprints_Object">
+            <summary>
+            提交指纹比对结果
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.SubmitFingerprints_Object.Device">
+            <summary>
+            设备相关信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.SubmitFingerprints_Object.Ticket">
+            <summary>
+            票据信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.SubmitFingerprints_Object.Result">
+            <summary>
+            比对结果，成功或失败
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.SubmitFingerprints_Object.FingerToken">
+            <summary>
+            比对成功的指纹的Token
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.SubmitFingerprints_Object.Session">
+            <summary>
+            会话对象
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Data.SubmitCollect_Object">
+            <summary>
+            提交采集结果
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.SubmitCollect_Object.Device">
+            <summary>
+            设备相关信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.SubmitCollect_Object.Ticket">
+            <summary>
+            票据信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.SubmitCollect_Object.Result">
+            <summary>
+            采集结果，成功或失败
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.SubmitCollect_Object.Type">
+            <summary>
+            采集的数据类型
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.SubmitCollect_Object.Data">
+            <summary>
+            采集到的数据
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.SubmitCollect_Object.Session">
+            <summary>
+            会话对象
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Data.DoorChannelExport_Object">
+            <summary>
+            出口模式下的过闸结果
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DoorChannelExport_Object.IsShutdownChannel">
+            <summary>
+            处于落杆模式
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DoorChannelExport_Object.OrderID">
+            <summary>
+            本条记录的唯一标识符
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DoorChannelExport_Object.Count">
+            <summary>
+            本次过闸人数
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DoorChannelExport_Object.ChannelMode">
+            <summary>
+            过闸方向
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DoorChannelExport_Object.EventDate">
+            <summary>
+            过闸事件的时间截
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DoorChannelExport_Object.Device">
+            <summary>
+            设备相关信息
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Data.ShutdownChannel_Object">
+            <summary>
+            落杆模式应答
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.ShutdownChannel_Object.Result">
+            <summary>
+            操作结果
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.ShutdownChannel_Object.IsShutdownChannel">
+            <summary>
+            处于落杆模式
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.ShutdownChannel_Object.Device">
+            <summary>
+            设备相关信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.ShutdownChannel_Object.ChannelMode">
+            <summary>
+            过闸方向
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.ShutdownChannel_Object.Ticket">
+            <summary>
+            票据信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.ShutdownChannel_Object.Session">
+            <summary>
+            会话对象
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Data.VerifyCollect_Object">
+            <summary>
+            指纹比对采集结果
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.VerifyCollect_Object.Device">
+            <summary>
+            设备相关信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.VerifyCollect_Object.Ticket">
+            <summary>
+            票据信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.VerifyCollect_Object.Result">
+            <summary>
+            采集结果，成功或失败
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.VerifyCollect_Object.Data">
+            <summary>
+            返回采集到比对成功的指纹数据
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.VerifyCollect_Object.Session">
+            <summary>
+            会话对象
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Data.Ticket">
+            <summary>
+            门票数据
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Ticket.RCPNO">
+            <summary>
+            单据号码
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Ticket.Bar">
+            <summary>
+            解密后的条码
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Ticket.Number">
+            <summary>
+            票号码
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Ticket.TicketType">
+            <summary>
+            门票类型
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Ticket.Price">
+            <summary>
+            价钱
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Ticket.UsageCount">
+            <summary>
+            己用人数
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Ticket.CapacitySize">
+            <summary>
+            可用人数
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Ticket.TicketSource">
+            <summary>
+            票据来源
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Ticket.ExpiryDate">
+            <summary>
+            有效日期
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Ticket.BeginDate">
+            <summary>
+            起始生效日期
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Ticket.NeedFinger">
+            <summary>
+            要求验证指纹
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Ticket.NeedIDCard">
+            <summary>
+            要求验证身份证
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Ticket.UR_Text1">
+            <summary>
+            用户自定义文本1
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Ticket.UR_Text2">
+            <summary>
+            用户自定义文本2
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Ticket.UR_Picture1">
+            <summary>
+            用户图片1
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Ticket.UR_Picture2">
+            <summary>
+            用户图片2
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Data.Fingerprint">
+            <summary>
+            指纹数据
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Fingerprint.Data">
+            <summary>
+            指纹数据(BASE64编码)
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Fingerprint.Token">
+            <summary>
+            唯一标识
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Data.TicketResult">
+            <summary>
+            检票返回操作数据
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.TicketResult.Code">
+            <summary>
+            要求设备操作的类型代码
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.TicketResult.TicketData">
+            <summary>
+            票数据
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.TicketResult.Session">
+            <summary>
+            整个任务的会话
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.TicketResult.Image">
+            <summary>
+            使用这张票的人的照片
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.TicketResult.FaceList">
+            <summary>
+            这张票的人脸识别用的列表
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Data.FaceInfo">
+            <summary>
+            人脸信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.FaceInfo.Image">
+            <summary>
+            人脸图像
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.FaceInfo.EigenValue">
+            <summary>
+            特征值
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Data.TicketSession">
+            <summary>
+            检票任务会话对象
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.TicketSession.IsShutdownChannel">
+            <summary>
+            处于落杆模式
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.TicketSession.OrderID">
+            <summary>
+            订单号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.TicketSession.ParkID">
+            <summary>
+            园区号码
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.TicketSession.DeviceID">
+            <summary>
+            设备ID
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.TicketSession.TicketNo_Pass">
+            <summary>
+            门票号码是否己验证
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.TicketSession.Ticket_No">
+            <summary>
+            门票号码
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.TicketSession.Fingerprint_Pass">
+            <summary>
+            指纹是否己验证
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.TicketSession.Fingerprint_Token">
+            <summary>
+            己验证成功的指纹TOKEN
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.TicketSession.IDCard_Pass">
+            <summary>
+            身份证是否己验证
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.TicketSession.IDCard_Number">
+            <summary>
+            己验证过的身份证号码
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.TicketSession.AdminConfirm">
+            <summary>
+            管理员己确认
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.TicketSession.AdminNumber">
+            <summary>
+            确认的管理员的号码
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.TicketSession.Temp_Fingerprint">
+            <summary>
+            临时指纹数据
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.TicketSession.Temp_IDNumber">
+            <summary>
+            临时身份证数据
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.TicketSession.CallCount">
+            <summary>
+            会话的调用次数（设备每调用一次接口就累加1，服务器通过此值来判断某些操作是否需要重试）
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Result`1.State">
+            <summary>
+            结果 
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Result`1.Description">
+            <summary>
+            描述
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Result`1.TTS">
+            <summary>
+            需要TTS语音播报的内容
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Result`1.Data">
+            <summary>
+            业务数据
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Data.DeviceUpdateInfo">
+            <summary>
+            升级的信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceUpdateInfo.AppInfo">
+            <summary>
+            新的版本信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceUpdateInfo.URL">
+            <summary>
+            升级数据的下载连接
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Heartbeat_Object.PassCount">
+            <summary>
+            过闸次数
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Heartbeat_Object.CheckCount">
+            <summary>
+            检票次数
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Data.DeviceUILayout">
+            <summary>
+            升级的信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceUILayout.Layout">
+            <summary>
+            Layout数据
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceUILayout.ChangeDate">
+            <summary>
+            修改日期
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceUILayout.UIVersion">
+            <summary>
+            UI的版本号
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Data.DynamicsInfo">
+            <summary>
+            动态显示的数据
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DynamicsInfo.Temperature">
+            <summary>
+            温度
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DynamicsInfo.Humidity">
+            <summary>
+            湿度
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DynamicsInfo.ADText">
+            <summary>
+            滚动广告
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DynamicsInfo.ToDayNow">
+            <summary>
+            当时的时间（用于校对设备时钟）
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DynamicsInfo.Channel_A_Count">
+            <summary>
+            A模式过闸数
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DynamicsInfo.Channel_B_Count">
+            <summary>
+            B模式过闸数
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Data.DeviceStatus">
+            <summary>
+            设备状态
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceStatus.DeviceName">
+            <summary>
+            设备名，唯一标识符
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceStatus.ChannelMode">
+            <summary>
+            设备的当前工作模式
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceStatus.Startup">
+            <summary>
+            启动日期
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceStatus.CheckCount">
+            <summary>
+            检票人数
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceStatus.TotalCount">
+            <summary>
+            运行期间总过闸人数
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceStatus.AppInfo">
+            <summary>
+            程序相关信息
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Data.DeviceWorkModeUpdate">
+            <summary>
+            设备工作模式配置
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceWorkModeUpdate.WorkMode_Version">
+            <summary>
+            工作模式的版本（第N次修改）
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceWorkModeUpdate.ModeList">
+            <summary>
+            设备的工作模式列表
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Data.DeviceWorkMode">
+            <summary>
+            设备工作模式
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceWorkMode.ID">
+            <summary>
+            编号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceWorkMode.DeviceEnable">
+            <summary>
+            验票设备是否启用
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceWorkMode.ChannelMode">
+            <summary>
+            通道工作模式
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceWorkMode.OCR_Value">
+            <summary>
+            人脸识别阀值
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceWorkMode.FingerprintLevel">
+            <summary>
+            指纹验证等级
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceWorkMode.Snapshot">
+            <summary>
+            是否需要拍照
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceWorkMode.LockageTimeout">
+            <summary>
+            过闸超时值（秒）
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceWorkMode.FingerprintTimeout">
+            <summary>
+            打指纹超时值(秒)
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceWorkMode.IDTimeout">
+            <summary>
+            身份证采集超时值(秒)
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceWorkMode.ExitMode">
+            <summary>
+            启用出口模式
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceWorkMode.RepeatTimes">
+            <summary>
+            重复刷卡最大间隔
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.DeviceWorkMode.CheckTicketTimeBlock">
+            <summary>
+            检票时段 
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Data.TimeBlock">
+            <summary>
+            时间段（一天中某个时间点到某个时间点)
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.TimeBlock.Begin">
+            <summary>
+            起始时间
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.TimeBlock.End">
+            <summary>
+            结束时间
+            </summary>
+        </member>
+        <member name="M:DocomSDK.Ticket.Data.TimeBlock.#ctor(DocomSDK.Ticket.Data.Time,DocomSDK.Ticket.Data.Time)">
+            <summary>
+            允许结束时间比起始时间小，说明是跨天的时间段
+            </summary>
+            <param name="begin"></param>
+            <param name="end"></param>
+        </member>
+        <member name="M:DocomSDK.Ticket.Data.TimeBlock.Contains(DocomSDK.Ticket.Data.Time)">
+            <summary>
+            判断这个时间是否包含在本时段内
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.Ticket.Data.Time">
+            <summary>
+            一天的时段(时分秒)
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Time.Hours">
+            <summary>
+            小时
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Time.Minutes">
+            <summary>
+            分钟
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Time.Seconds">
+            <summary>
+            秒
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.Time.TotalSeconds">
+            <summary>
+            总秒数
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Data.ApplicationsInfo">
+            <summary>
+            程序信息
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.ApplicationsInfo.Main_Version">
+            <summary>
+            主版本号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.ApplicationsInfo.ProductID">
+            <summary>
+            产品ID号（用来分类是哪一种产品）
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.ApplicationsInfo.SW_Version">
+            <summary>
+            软件版本号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.ApplicationsInfo.HW_Version">
+            <summary>
+            硬件版本号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.ApplicationsInfo.PublishDate">
+            <summary>
+            发布日期
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.ApplicationsInfo.SystemType">
+            <summary>
+            系统类型
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.ApplicationsInfo.UI_Version">
+            <summary>
+            UI的版本
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.ApplicationsInfo.WorkMode_Version">
+            <summary>
+            工作模式的版本（第N次修改）
+            </summary>
+        </member>
+        <member name="P:DocomSDK.Ticket.Data.ApplicationsInfo.IPAddress">
+            <summary>
+            设备工作时的IP地址
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Enum.TicketCommand">
+            <summary>
+            通信主信令，与接口名字一致
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.TicketCommand.Heartbeat">
+            <summary>
+            空指令
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.TicketCommand.Device_QueryUpdateInfo">
+            <summary>
+            设备查询升级信息
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.TicketCommand.Device_QueryUILayout">
+            <summary>
+            设备查询UI布局更新
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.TicketCommand.Device_QueryDynamicsInfo">
+            <summary>
+            设备请求动态数据
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.TicketCommand.Device_UploadDeviceStatus">
+            <summary>
+            设备上传状态
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.TicketCommand.Device_ProgramUpdate">
+            <summary>
+            设备查询程序升级信息
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.TicketCommand.Device_WorkModeUpdate">
+            <summary>
+            设备查询工作模式
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.TicketCommand.Ticket_CheckTicket">
+            <summary>
+            设备请求开始验票
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.TicketCommand.Ticket_SubmitWalkPast">
+            <summary>
+            设备提交过闸结果
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.TicketCommand.Ticket_SubmitFingerprints">
+            <summary>
+            设备提交指纹比对结果
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.TicketCommand.Ticket_SubmitCollect">
+            <summary>
+            设备提交采集结果
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.TicketCommand.Ticket_VerifyCollect">
+            <summary>
+            设备提交比对采集的结果
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.TicketCommand.Ticket_DoorChannelExportPassed">
+            <summary>
+            设备提交出口模式下的过闸数据
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.TicketCommand.Ticket_ShutdownChannel">
+            <summary>
+            强制落杆事件
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.TicketCommand.Ticket_StartupChannel">
+            <summary>
+            恢复拦杆事件
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.TicketCommand.API_DocomTTS">
+            <summary>
+            道控TTS转换接口
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.TicketCommand.Ticket_SubmitFaceDetect">
+            <summary>
+            人脸证件检测结果提交
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Enum.DetectType">
+            <summary>
+            检测类型
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.DetectType.FaceDetect">
+            <summary>
+            人脸比对
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.DetectType.FaceUpload">
+            <summary>
+            要求拍摄有人脸的相片上传
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.DetectType.FaceCredentials">
+            <summary>
+            要求人证比对
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Enum.Result_Code">
+            <summary>
+            操作返回结果代码
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.Result_Code.Fail">
+            <summary>
+            执行失败
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.Result_Code.OK">
+            <summary>
+            执行成功
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Enum.OperationCode">
+            <summary>
+            操作代码 
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.OperationCode.TaskTermination">
+            <summary>
+            任务结束
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.OperationCode.TicketNotExits">
+            <summary>
+            不存在的票
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.OperationCode.VerifyPass">
+            <summary>
+            验证通过，通知开闸
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.OperationCode.VerifyFingerprints">
+            <summary>
+            验证指纹
+            </summary> 
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.OperationCode.VerifytCardNo">
+            <summary>
+            验证刷卡(门票)
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.OperationCode.TicketOverdue">
+            <summary>
+            票己过期
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.OperationCode.TicketOff">
+            <summary>
+            票己用完(人次)
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.OperationCode.TicketNotEnable">
+            <summary>
+            票还未启用（未到生效日期）
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.OperationCode.InvalidDevice">
+            <summary>
+            非法设备(设备名称在数据库中找不到)
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.OperationCode.CollectIdentity">
+            <summary>
+            采集身份证
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.OperationCode.CollectFingerprints">
+            <summary>
+            采集指纹
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.OperationCode.CollectAdminNumber">
+            <summary>
+            采集管理员卡号
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.OperationCode.VerifyCollect">
+            <summary>
+            比对采集指纹
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.OperationCode.ShutdownChannel">
+            <summary>
+            强制落杆
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.OperationCode.StartupChannel">
+            <summary>
+            恢复栏杆
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.OperationCode.FaceDetect">
+            <summary>
+            人脸比对
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.OperationCode.FaceUpload">
+            <summary>
+            要求拍摄有人脸的相片上传
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.OperationCode.FaceCredentials">
+            <summary>
+            要求人证比对
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.OperationCode.CollectVenaFeature">
+            <summary>
+            要求采集掌静脉特征数据
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Enum.Channel_Mode">
+            <summary>
+            通道工作模式
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.Channel_Mode.Channel_A">
+            <summary>
+            通道A方向模式
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.Channel_Mode.Channel_B">
+            <summary>
+            通道B方向模式
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Enum.System_Type">
+            <summary>
+            闸机系统类型
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.System_Type.WindowsCE">
+            <summary>
+            WinCE系统
+            </summary>        
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.System_Type.Android">
+            <summary>
+            安卓系统
+            </summary>        
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.System_Type.PDA">
+            <summary>
+            手持PDA验票
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.System_Type.Linux">
+            <summary>
+            Linux系统
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Enum.CollectType">
+            <summary>
+            采集的类型
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.CollectType.CardNumber">
+            <summary>
+            票号
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.CollectType.IDCardNo">
+            <summary>
+            身份证号码
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.CollectType.Fingerprint">
+            <summary>
+            指纹
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.CollectType.VenaFeature">
+            <summary>
+            掌静脉特征
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.CollectType.AdminNumber">
+            <summary>
+            管理员号码
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Enum.ConfigType">
+            <summary>
+            数据库配置项目的定义
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.ConfigType.BackImage">
+            <summary>
+            背景地图
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.ConfigType.ADText">
+            <summary>
+            闸机滚动广告内容
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.ConfigType.Temperature">
+            <summary>
+            天气内容
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.ConfigType.TicketAPI">
+            <summary>
+            票务逻辑处理服务的URL地址
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.ConfigType.API_State">
+            <summary>
+            API状态（在线，离线）
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.ConfigType.ParkingName">
+            <summary>
+            游乐场名字
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.ConfigType.HistoryTimespan">
+            <summary>
+            历史回放前后时长
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.ConfigType.PCADText">
+            <summary>
+            PC端广告
+            </summary>
+        </member>
+        <member name="F:DocomSDK.Ticket.Enum.ConfigType.PCADImage">
+            <summary>
+            PC端广告图片
+            </summary>
+        </member>
+        <member name="T:DocomSDK.Ticket.Interface.IDeviceAPI">
+            <summary>
+            设备控制接口
+            </summary>
+        </member>
+        <member name="M:DocomSDK.Ticket.Interface.IDeviceAPI.Device_QueryUpdateInfo(DocomSDK.Ticket.Data.DeviceStatus)">
+            <summary>
+            检查是否有升级数据    
+            </summary>
+        </member>
+        <member name="M:DocomSDK.Ticket.Interface.IDeviceAPI.Device_QueryUILayout(DocomSDK.Ticket.Data.DeviceStatus)">
+            <summary>
+            查询是否有UI更新
+            </summary>
+            <param name="status">设备名</param>
+        </member>
+        <member name="M:DocomSDK.Ticket.Interface.IDeviceAPI.Device_QueryDynamicsInfo(DocomSDK.Ticket.Data.DeviceStatus)">
+            <summary>
+            更新动态信息(温度、湿度、滚动广告等)
+            </summary>
+        </member>
+        <member name="M:DocomSDK.Ticket.Interface.IDeviceAPI.Device_UploadDeviceStatus(DocomSDK.Ticket.Data.DeviceStatus)">
+            <summary>
+            上传设备状态
+            </summary>
+            <param name="status"></param>
+        </member>
+        <member name="M:DocomSDK.Ticket.Interface.IDeviceAPI.Device_ProgramUpdate(DocomSDK.Ticket.Data.DeviceStatus)">
+            <summary>
+            检查程序升级
+            </summary>
+            <param name="status"></param>
+        </member>
+        <member name="M:DocomSDK.Ticket.Interface.IDeviceAPI.Device_WorkModeUpdate(DocomSDK.Ticket.Data.DeviceStatus)">
+            <summary>
+            更新设备工作模式
+            </summary>
+            <param name="status"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.Ticket.Interface.ITicketAPI">
+            <summary>
+            票务API业务接口定义 
+            </summary>    
+        </member>
+        <member name="M:DocomSDK.Ticket.Interface.ITicketAPI.Ticket_CheckTicket(DocomSDK.Ticket.Data.CheckTicket_Object)">
+             <summary>
+             请求检票
+             </summary>
+            <param name="obj">请求参数</param>
+             <returns></returns>        
+        </member>
+        <member name="M:DocomSDK.Ticket.Interface.ITicketAPI.Ticket_SubmitWalkPast(DocomSDK.Ticket.Data.SubmitWalkPast_Object)">
+             <summary>
+             提交过闸结果
+             </summary>
+            <param name="obj">过闸结果</param>
+             <returns></returns>        
+        </member>
+        <member name="M:DocomSDK.Ticket.Interface.ITicketAPI.Ticket_SubmitFingerprints(DocomSDK.Ticket.Data.SubmitFingerprints_Object)">
+             <summary>
+             提交指纹比对结果
+             </summary>
+            <param name="obj">比对结果</param>
+             <returns></returns>        
+        </member>
+        <member name="M:DocomSDK.Ticket.Interface.ITicketAPI.Ticket_SubmitCollect(DocomSDK.Ticket.Data.SubmitCollect_Object)">
+            <summary>
+            提交采集结果 
+            </summary>
+            <param name="obj">采集结果</param>
+            <returns></returns>        
+        </member>
+        <member name="M:DocomSDK.Ticket.Interface.ITicketAPI.Ticket_VerifyCollect(DocomSDK.Ticket.Data.VerifyCollect_Object)">
+            <summary>
+            提交验证采集结果
+            </summary>
+            <param name="obj">比对结果</param>
+            <returns></returns>        
+        </member>
+        <member name="M:DocomSDK.Ticket.Interface.ITicketAPI.Ticket_DoorChannelExportPassed(DocomSDK.Ticket.Data.DoorChannelExport_Object)">
+            <summary>
+            出口模式下的过闸记录
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>        
+        </member>
+        <member name="M:DocomSDK.Ticket.Interface.ITicketAPI.Heartbeat(DocomSDK.Ticket.Data.Heartbeat_Object)">
+            <summary>
+            心跳
+            </summary>
+            <param name="token"></param>
+            <returns></returns>        
+        </member>
+        <member name="M:DocomSDK.Ticket.Interface.ITicketAPI.Ticket_ShutdownChannel(DocomSDK.Ticket.Data.ShutdownChannel_Object)">
+            <summary>
+            设备上报落杆模式
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.Ticket.Interface.ITicketAPI.Ticket_SubmitFaceDetect(DocomSDK.Ticket.Data.FaceDetect)">
+            <summary>
+            提交人脸检测结果(人脸识别、人证比对、人脸检测上传)
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.Ticket.TicketConnection">
+            <summary>
+            票务类型通信对象
+            </summary>
+        </member>
+        <member name="M:DocomSDK.Ticket.TicketConnection.Device_ProgramUpdate(DocomSDK.Ticket.Data.DeviceStatus)">
+            <summary>
+            检查设备程序升级
+            </summary>
+            <param name="status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.Ticket.TicketConnection.Device_QueryDynamicsInfo(DocomSDK.Ticket.Data.DeviceStatus)">
+            <summary>
+            检查动态数据
+            </summary>
+            <param name="status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.Ticket.TicketConnection.Device_QueryUILayout(DocomSDK.Ticket.Data.DeviceStatus)">
+            <summary>
+            检查界面UI更新信息
+            </summary>
+            <param name="status"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.Ticket.TicketConnection.Heartbeat(DocomSDK.Ticket.Data.Heartbeat_Object)">
+            <summary>
+            心跳包
+            </summary>
+            <param name="token"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.Ticket.TicketConnection.Ticket_CheckTicket(DocomSDK.Ticket.Data.CheckTicket_Object)">
+            <summary>
+            提交验票请求
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.Ticket.TicketConnection.Ticket_DoorChannelExportPassed(DocomSDK.Ticket.Data.DoorChannelExport_Object)">
+            <summary>
+            提交出闸记录
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.Ticket.TicketConnection.Ticket_ShutdownChannel(DocomSDK.Ticket.Data.ShutdownChannel_Object)">
+            <summary>
+            落杆模式
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.Ticket.TicketConnection.Ticket_SubmitCollect(DocomSDK.Ticket.Data.SubmitCollect_Object)">
+            <summary>
+            提交采集数据
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.Ticket.TicketConnection.Ticket_SubmitFaceDetect(DocomSDK.Ticket.Data.FaceDetect)">
+            <summary>
+            提交人证脸比对结果
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.Ticket.TicketConnection.Ticket_SubmitFingerprints(DocomSDK.Ticket.Data.SubmitFingerprints_Object)">
+            <summary>
+            提交指纹
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.Ticket.TicketConnection.Ticket_SubmitWalkPast(DocomSDK.Ticket.Data.SubmitWalkPast_Object)">
+            <summary>
+            提交入闸记录
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.Ticket.TicketConnection.Ticket_VerifyCollect(DocomSDK.Ticket.Data.VerifyCollect_Object)">
+            <summary>
+            提交验证采集的结果
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.Ticket.TicketConnection.TTS_Convert(DocomSDK.API.TTS.TTSRequest)">
+            <summary>
+            调用TTS转换接口，将文字转换成语音
+            </summary>
+            <param name="Text"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.TVM.TVM_Heartbeat_Object">
+            <summary>
+            TVM心跳
+            </summary>
+        </member>
+        <member name="P:DocomSDK.TVM.TVM_Heartbeat_Object.Device">
+            <summary>
+            设备对象
+            </summary>
+        </member>
+        <member name="P:DocomSDK.TVM.TVM_Heartbeat_Object.SysTime">
+            <summary>
+            时间截
+            </summary>
+        </member>
+        <member name="T:DocomSDK.TVM.TVMConnection">
+            <summary>
+            TVM设备通信封装对象
+            </summary>
+        </member>
+        <member name="M:DocomSDK.TVM.TVMConnection.#ctor(System.String,System.Int32,System.Int32,System.String)">
+            <summary>
+            构造
+            </summary>
+            <param name="ip"></param>
+            <param name="port"></param>
+            <param name="timeout"></param>
+            <param name="deviceName"></param>
+        </member>
+        <member name="M:DocomSDK.TVM.TVMConnection.DeviceIni(DocomSDK.TVM.TVMDevice)">
+            <summary>
+            保留
+            </summary>
+            <param name="device"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.TVM.TVMConnection.GetConfig(DocomSDK.TVM.TVMDevice)">
+            <summary>
+            保留
+            </summary>
+            <param name="device"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.TVM.TVMConnection.GetTicketOrder(DocomSDK.TVM.TicketOrder_Object)">
+            <summary>
+            订单接口
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.TVM.TVMConnection.Heartbeat(DocomSDK.TVM.TVM_Heartbeat_Object)">
+            <summary>
+            心跳包
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.TVM.TVMConnection.QueryPay(DocomSDK.TVM.QuickPayment_Object)">
+            <summary>
+            查询付款
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.TVM.TVMConnection.QuickPayment(DocomSDK.TVM.QuickPayment_Object)">
+            <summary>
+            快速付款
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.TVM.TVMConnection.SaleTicket(DocomSDK.TVM.QuickPayment_Object)">
+            <summary>
+            卖票
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.TVM.TVMConnection.VerifyTicket(DocomSDK.TVM.VerifyTicket_Object)">
+            <summary>
+            检票
+            </summary>
+            <param name="obj"></param>
+            <returns></returns>
+        </member>
+        <member name="T:DocomSDK.TVM.TVMDevice">
+            <summary>
+            TVM设备对象
+            </summary>
+        </member>
+        <member name="P:DocomSDK.TVM.TVMDevice.DeviceKey">
+            <summary>
+            唯一序列号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.TVM.TVMDevice.Version">
+            <summary>
+            设备的版本号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.TVM.TVMDevice.IPAddress">
+            <summary>
+            设备所处的IP地址
+            </summary>
+        </member>
+        <member name="T:DocomSDK.TVM.TVMResult`1">
+            <summary>
+            TVM返回类型
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="P:DocomSDK.TVM.TVMResult`1.ResultCode">
+            <summary>
+            调用结果
+            </summary>
+        </member>
+        <member name="P:DocomSDK.TVM.TVMResult`1.SysDate">
+            <summary>
+            调用时间
+            </summary>
+        </member>
+        <member name="P:DocomSDK.TVM.TVMResult`1.Message">
+            <summary>
+            结果描述
+            </summary>
+        </member>
+        <member name="P:DocomSDK.TVM.TVMResult`1.Data">
+            <summary>
+            返回的数据
+            </summary>
+        </member>
+        <member name="T:DocomSDK.TVM.VerifyTicket_Object">
+            <summary>
+            检票对象
+            </summary>
+        </member>
+        <member name="P:DocomSDK.TVM.VerifyTicket_Object.Device">
+            <summary>
+            所属设备
+            </summary>
+        </member>
+        <member name="P:DocomSDK.TVM.VerifyTicket_Object.TicketList">
+            <summary>
+            票列表
+            </summary>
+        </member>
+        <member name="T:DocomSDK.WaitCommandPool`1">
+            <summary>
+            指令等待对象
+            </summary>
+        </member>
+        <member name="M:DocomSDK.WaitCommandPool`1.Create(System.String,System.String,System.Int32)">
+            <summary>
+            创建一个等待对象
+            </summary>
+            <param name="sn"></param>
+            <param name="key"></param>
+            <param name="WaitcmdID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:DocomSDK.WaitCommandPool`1.Clear">
+            <summary>
+            清空等待对象池
+            </summary>
+        </member>
+        <member name="M:DocomSDK.WaitCommandPool`1.Dispose">
+            <summary>
+            释放整个对像池
+            </summary>
+        </member>
+        <member name="M:DocomSDK.WaitCommandPool`1.On_Response(System.Int32,System.String,System.String,System.String,`0)">
+            <summary>
+            处理应答数据
+            </summary>
+            <param name="cmdID"></param>
+            <param name="key"></param>
+            <param name="sn"></param>
+            <param name="json"></param>
+            <param name="pack"></param>
+        </member>
+        <member name="M:DocomSDK.WaitCommandPool`1.Remove(System.String)">
+            <summary>
+            移除一个等待对象
+            </summary>
+            <param name="key"></param>
+        </member>
+        <member name="T:DocomSDK.WaitCommandPool`1.WaitObject`1">
+            <summary>
+            等待对象
+            </summary>
+            <typeparam name="TT"></typeparam>
+        </member>
+        <member name="M:DocomSDK.WaitCommandPool`1.WaitObject`1.#ctor(System.String,System.String,System.Int32,DocomSDK.WaitCommandPool{`1})">
+            <summary>
+            内部构造
+            </summary>
+            <param name="sn"></param>
+            <param name="key"></param>
+            <param name="WaitcmdID"></param>
+            <param name="pool"></param>
+        </member>
+        <member name="P:DocomSDK.WaitCommandPool`1.WaitObject`1.Pool">
+            <summary>
+            所属对象池
+            </summary>
+        </member>
+        <member name="P:DocomSDK.WaitCommandPool`1.WaitObject`1.Key">
+            <summary>
+            唯一Key
+            </summary>
+        </member>
+        <member name="P:DocomSDK.WaitCommandPool`1.WaitObject`1.DeviceSN">
+            <summary>
+            等待的数据包设备唯一号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.WaitCommandPool`1.WaitObject`1.WaitCommandID">
+            <summary>
+            等待的命令号
+            </summary>
+        </member>
+        <member name="P:DocomSDK.WaitCommandPool`1.WaitObject`1.Event">
+            <summary>
+            事件对象
+            </summary>
+        </member>
+        <member name="P:DocomSDK.WaitCommandPool`1.WaitObject`1.Result">
+            <summary>
+            返回的数据
+            </summary>
+        </member>
+        <member name="M:DocomSDK.WaitCommandPool`1.WaitObject`1.Set">
+            <summary>
+            激发事件
+            </summary>
+        </member>
+        <member name="M:DocomSDK.WaitCommandPool`1.WaitObject`1.Dispose">
+            <summary>
+            释放对象
+            </summary>
+        </member>
+    </members>
+</doc>

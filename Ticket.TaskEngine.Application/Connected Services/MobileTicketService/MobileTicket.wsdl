@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTicketNumber">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminalNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodeStr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TimeStamp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="signature" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="str1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="str2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTicketNumberResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTicketNumberResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintUpload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TerminalNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProductDetails" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Signature" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TimeStamp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="str1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="str2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PrintUploadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PrintUploadResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLineProduct">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TimeStamp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="signature" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProJson" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="str1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="str2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetLineProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetLineProductResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TicketConsumeLine">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminalNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TicketJSON" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TimeStamp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="signature" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TicketConsumeLineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TicketConsumeLineResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductIssuedLine">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TimeStamp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="signature" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="str1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="str2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetProductIssuedLineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetProductIssuedLineResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOnLineProductIssuedLine">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="onlinecode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="offlcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Signature" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TimeStamp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="str1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="str2" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOnLineProductIssuedLineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateOnLineProductIssuedLineResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckThrough">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="terminalNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Signature" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TimeStamp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SellJson" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckThroughResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckThroughResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketNumberSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTicketNumber" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketNumberSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTicketNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="PrintUploadSoapIn">
+    <wsdl:part name="parameters" element="tns:PrintUpload" />
+  </wsdl:message>
+  <wsdl:message name="PrintUploadSoapOut">
+    <wsdl:part name="parameters" element="tns:PrintUploadResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetLineProductSoapIn">
+    <wsdl:part name="parameters" element="tns:GetLineProduct" />
+  </wsdl:message>
+  <wsdl:message name="GetLineProductSoapOut">
+    <wsdl:part name="parameters" element="tns:GetLineProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="TicketConsumeLineSoapIn">
+    <wsdl:part name="parameters" element="tns:TicketConsumeLine" />
+  </wsdl:message>
+  <wsdl:message name="TicketConsumeLineSoapOut">
+    <wsdl:part name="parameters" element="tns:TicketConsumeLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetProductIssuedLineSoapIn">
+    <wsdl:part name="parameters" element="tns:GetProductIssuedLine" />
+  </wsdl:message>
+  <wsdl:message name="GetProductIssuedLineSoapOut">
+    <wsdl:part name="parameters" element="tns:GetProductIssuedLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOnLineProductIssuedLineSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOnLineProductIssuedLine" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOnLineProductIssuedLineSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOnLineProductIssuedLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckThroughSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckThrough" />
+  </wsdl:message>
+  <wsdl:message name="CheckThroughSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckThroughResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketNumberHttpGetIn">
+    <wsdl:part name="merchantCode" type="s:string" />
+    <wsdl:part name="terminalNo" type="s:string" />
+    <wsdl:part name="CodeStr" type="s:string" />
+    <wsdl:part name="TimeStamp" type="s:string" />
+    <wsdl:part name="signature" type="s:string" />
+    <wsdl:part name="str1" type="s:string" />
+    <wsdl:part name="str2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketNumberHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PrintUploadHttpGetIn">
+    <wsdl:part name="MerchantCode" type="s:string" />
+    <wsdl:part name="TerminalNo" type="s:string" />
+    <wsdl:part name="ProductDetails" type="s:string" />
+    <wsdl:part name="Signature" type="s:string" />
+    <wsdl:part name="TimeStamp" type="s:string" />
+    <wsdl:part name="str1" type="s:string" />
+    <wsdl:part name="str2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PrintUploadHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLineProductHttpGetIn">
+    <wsdl:part name="merchantCode" type="s:string" />
+    <wsdl:part name="TimeStamp" type="s:string" />
+    <wsdl:part name="signature" type="s:string" />
+    <wsdl:part name="ProJson" type="s:string" />
+    <wsdl:part name="str1" type="s:string" />
+    <wsdl:part name="str2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLineProductHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="TicketConsumeLineHttpGetIn">
+    <wsdl:part name="merchantCode" type="s:string" />
+    <wsdl:part name="terminalNo" type="s:string" />
+    <wsdl:part name="TicketJSON" type="s:string" />
+    <wsdl:part name="TimeStamp" type="s:string" />
+    <wsdl:part name="signature" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TicketConsumeLineHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductIssuedLineHttpGetIn">
+    <wsdl:part name="merchantCode" type="s:string" />
+    <wsdl:part name="TimeStamp" type="s:string" />
+    <wsdl:part name="signature" type="s:string" />
+    <wsdl:part name="str1" type="s:string" />
+    <wsdl:part name="str2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductIssuedLineHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOnLineProductIssuedLineHttpGetIn">
+    <wsdl:part name="MerchantCode" type="s:string" />
+    <wsdl:part name="onlinecode" type="s:string" />
+    <wsdl:part name="offlcode" type="s:string" />
+    <wsdl:part name="Signature" type="s:string" />
+    <wsdl:part name="TimeStamp" type="s:string" />
+    <wsdl:part name="str1" type="s:string" />
+    <wsdl:part name="str2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOnLineProductIssuedLineHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckThroughHttpGetIn">
+    <wsdl:part name="MerchantCode" type="s:string" />
+    <wsdl:part name="terminalNo" type="s:string" />
+    <wsdl:part name="Signature" type="s:string" />
+    <wsdl:part name="TimeStamp" type="s:string" />
+    <wsdl:part name="SellJson" type="s:string" />
+    <wsdl:part name="OrderType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckThroughHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketNumberHttpPostIn">
+    <wsdl:part name="merchantCode" type="s:string" />
+    <wsdl:part name="terminalNo" type="s:string" />
+    <wsdl:part name="CodeStr" type="s:string" />
+    <wsdl:part name="TimeStamp" type="s:string" />
+    <wsdl:part name="signature" type="s:string" />
+    <wsdl:part name="str1" type="s:string" />
+    <wsdl:part name="str2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTicketNumberHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="PrintUploadHttpPostIn">
+    <wsdl:part name="MerchantCode" type="s:string" />
+    <wsdl:part name="TerminalNo" type="s:string" />
+    <wsdl:part name="ProductDetails" type="s:string" />
+    <wsdl:part name="Signature" type="s:string" />
+    <wsdl:part name="TimeStamp" type="s:string" />
+    <wsdl:part name="str1" type="s:string" />
+    <wsdl:part name="str2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="PrintUploadHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLineProductHttpPostIn">
+    <wsdl:part name="merchantCode" type="s:string" />
+    <wsdl:part name="TimeStamp" type="s:string" />
+    <wsdl:part name="signature" type="s:string" />
+    <wsdl:part name="ProJson" type="s:string" />
+    <wsdl:part name="str1" type="s:string" />
+    <wsdl:part name="str2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetLineProductHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="TicketConsumeLineHttpPostIn">
+    <wsdl:part name="merchantCode" type="s:string" />
+    <wsdl:part name="terminalNo" type="s:string" />
+    <wsdl:part name="TicketJSON" type="s:string" />
+    <wsdl:part name="TimeStamp" type="s:string" />
+    <wsdl:part name="signature" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="TicketConsumeLineHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductIssuedLineHttpPostIn">
+    <wsdl:part name="merchantCode" type="s:string" />
+    <wsdl:part name="TimeStamp" type="s:string" />
+    <wsdl:part name="signature" type="s:string" />
+    <wsdl:part name="str1" type="s:string" />
+    <wsdl:part name="str2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetProductIssuedLineHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOnLineProductIssuedLineHttpPostIn">
+    <wsdl:part name="MerchantCode" type="s:string" />
+    <wsdl:part name="onlinecode" type="s:string" />
+    <wsdl:part name="offlcode" type="s:string" />
+    <wsdl:part name="Signature" type="s:string" />
+    <wsdl:part name="TimeStamp" type="s:string" />
+    <wsdl:part name="str1" type="s:string" />
+    <wsdl:part name="str2" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOnLineProductIssuedLineHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckThroughHttpPostIn">
+    <wsdl:part name="MerchantCode" type="s:string" />
+    <wsdl:part name="terminalNo" type="s:string" />
+    <wsdl:part name="Signature" type="s:string" />
+    <wsdl:part name="TimeStamp" type="s:string" />
+    <wsdl:part name="SellJson" type="s:string" />
+    <wsdl:part name="OrderType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckThroughHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="MobileTicketSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取票查询</wsdl:documentation>
+      <wsdl:input message="tns:GetTicketNumberSoapIn" />
+      <wsdl:output message="tns:GetTicketNumberSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintUpload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">门票取票打印上传</wsdl:documentation>
+      <wsdl:input message="tns:PrintUploadSoapIn" />
+      <wsdl:output message="tns:PrintUploadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLineProduct">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">产品入库对接</wsdl:documentation>
+      <wsdl:input message="tns:GetLineProductSoapIn" />
+      <wsdl:output message="tns:GetLineProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TicketConsumeLine">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">门票入园核销(闸机、J-box)</wsdl:documentation>
+      <wsdl:input message="tns:TicketConsumeLineSoapIn" />
+      <wsdl:output message="tns:TicketConsumeLineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductIssuedLine">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">下发产品接口</wsdl:documentation>
+      <wsdl:input message="tns:GetProductIssuedLineSoapIn" />
+      <wsdl:output message="tns:GetProductIssuedLineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOnLineProductIssuedLine">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改下发产品状态</wsdl:documentation>
+      <wsdl:input message="tns:UpdateOnLineProductIssuedLineSoapIn" />
+      <wsdl:output message="tns:UpdateOnLineProductIssuedLineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckThrough">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检查核销订单是否存在差异</wsdl:documentation>
+      <wsdl:input message="tns:CheckThroughSoapIn" />
+      <wsdl:output message="tns:CheckThroughSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MobileTicketHttpGet">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取票查询</wsdl:documentation>
+      <wsdl:input message="tns:GetTicketNumberHttpGetIn" />
+      <wsdl:output message="tns:GetTicketNumberHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintUpload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">门票取票打印上传</wsdl:documentation>
+      <wsdl:input message="tns:PrintUploadHttpGetIn" />
+      <wsdl:output message="tns:PrintUploadHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLineProduct">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">产品入库对接</wsdl:documentation>
+      <wsdl:input message="tns:GetLineProductHttpGetIn" />
+      <wsdl:output message="tns:GetLineProductHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TicketConsumeLine">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">门票入园核销(闸机、J-box)</wsdl:documentation>
+      <wsdl:input message="tns:TicketConsumeLineHttpGetIn" />
+      <wsdl:output message="tns:TicketConsumeLineHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductIssuedLine">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">下发产品接口</wsdl:documentation>
+      <wsdl:input message="tns:GetProductIssuedLineHttpGetIn" />
+      <wsdl:output message="tns:GetProductIssuedLineHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOnLineProductIssuedLine">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改下发产品状态</wsdl:documentation>
+      <wsdl:input message="tns:UpdateOnLineProductIssuedLineHttpGetIn" />
+      <wsdl:output message="tns:UpdateOnLineProductIssuedLineHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckThrough">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检查核销订单是否存在差异</wsdl:documentation>
+      <wsdl:input message="tns:CheckThroughHttpGetIn" />
+      <wsdl:output message="tns:CheckThroughHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="MobileTicketHttpPost">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketNumber">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">取票查询</wsdl:documentation>
+      <wsdl:input message="tns:GetTicketNumberHttpPostIn" />
+      <wsdl:output message="tns:GetTicketNumberHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PrintUpload">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">门票取票打印上传</wsdl:documentation>
+      <wsdl:input message="tns:PrintUploadHttpPostIn" />
+      <wsdl:output message="tns:PrintUploadHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetLineProduct">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">产品入库对接</wsdl:documentation>
+      <wsdl:input message="tns:GetLineProductHttpPostIn" />
+      <wsdl:output message="tns:GetLineProductHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TicketConsumeLine">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">门票入园核销(闸机、J-box)</wsdl:documentation>
+      <wsdl:input message="tns:TicketConsumeLineHttpPostIn" />
+      <wsdl:output message="tns:TicketConsumeLineHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductIssuedLine">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">下发产品接口</wsdl:documentation>
+      <wsdl:input message="tns:GetProductIssuedLineHttpPostIn" />
+      <wsdl:output message="tns:GetProductIssuedLineHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOnLineProductIssuedLine">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改下发产品状态</wsdl:documentation>
+      <wsdl:input message="tns:UpdateOnLineProductIssuedLineHttpPostIn" />
+      <wsdl:output message="tns:UpdateOnLineProductIssuedLineHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckThrough">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">检查核销订单是否存在差异</wsdl:documentation>
+      <wsdl:input message="tns:CheckThroughHttpPostIn" />
+      <wsdl:output message="tns:CheckThroughHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MobileTicketSoap" type="tns:MobileTicketSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketNumber">
+      <soap:operation soapAction="http://tempuri.org/GetTicketNumber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintUpload">
+      <soap:operation soapAction="http://tempuri.org/PrintUpload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLineProduct">
+      <soap:operation soapAction="http://tempuri.org/GetLineProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TicketConsumeLine">
+      <soap:operation soapAction="http://tempuri.org/TicketConsumeLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductIssuedLine">
+      <soap:operation soapAction="http://tempuri.org/GetProductIssuedLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOnLineProductIssuedLine">
+      <soap:operation soapAction="http://tempuri.org/UpdateOnLineProductIssuedLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckThrough">
+      <soap:operation soapAction="http://tempuri.org/CheckThrough" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MobileTicketSoap12" type="tns:MobileTicketSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketNumber">
+      <soap12:operation soapAction="http://tempuri.org/GetTicketNumber" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintUpload">
+      <soap12:operation soapAction="http://tempuri.org/PrintUpload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLineProduct">
+      <soap12:operation soapAction="http://tempuri.org/GetLineProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TicketConsumeLine">
+      <soap12:operation soapAction="http://tempuri.org/TicketConsumeLine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductIssuedLine">
+      <soap12:operation soapAction="http://tempuri.org/GetProductIssuedLine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOnLineProductIssuedLine">
+      <soap12:operation soapAction="http://tempuri.org/UpdateOnLineProductIssuedLine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckThrough">
+      <soap12:operation soapAction="http://tempuri.org/CheckThrough" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MobileTicketHttpGet" type="tns:MobileTicketHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketNumber">
+      <http:operation location="/GetTicketNumber" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintUpload">
+      <http:operation location="/PrintUpload" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLineProduct">
+      <http:operation location="/GetLineProduct" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TicketConsumeLine">
+      <http:operation location="/TicketConsumeLine" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductIssuedLine">
+      <http:operation location="/GetProductIssuedLine" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOnLineProductIssuedLine">
+      <http:operation location="/UpdateOnLineProductIssuedLine" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckThrough">
+      <http:operation location="/CheckThrough" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="MobileTicketHttpPost" type="tns:MobileTicketHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketNumber">
+      <http:operation location="/GetTicketNumber" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PrintUpload">
+      <http:operation location="/PrintUpload" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetLineProduct">
+      <http:operation location="/GetLineProduct" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TicketConsumeLine">
+      <http:operation location="/TicketConsumeLine" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductIssuedLine">
+      <http:operation location="/GetProductIssuedLine" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOnLineProductIssuedLine">
+      <http:operation location="/UpdateOnLineProductIssuedLine" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckThrough">
+      <http:operation location="/CheckThrough" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MobileTicket">
+    <wsdl:port name="MobileTicketSoap" binding="tns:MobileTicketSoap">
+      <soap:address location="http://112.74.131.57:10003/MobileTicket.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MobileTicketSoap12" binding="tns:MobileTicketSoap12">
+      <soap12:address location="http://112.74.131.57:10003/MobileTicket.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MobileTicketHttpGet" binding="tns:MobileTicketHttpGet">
+      <http:address location="http://112.74.131.57:10003/MobileTicket.asmx" />
+    </wsdl:port>
+    <wsdl:port name="MobileTicketHttpPost" binding="tns:MobileTicketHttpPost">
+      <http:address location="http://112.74.131.57:10003/MobileTicket.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,126 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>商家管理系统</title>
+    <link href="~/JavaScript/layui/css/layui.css" rel="stylesheet" />
+</head>
+<body class="layui-layout-body">
+    <div class="layui-layout layui-layout-admin">
+        <div class="layui-header">
+            <div class="layui-logo">旅行社后台管理系统</div>
+            <ul class="layui-nav layui-layout-right">
+                <li class="layui-nav-item">
+                    <a href="javascript:;">
+                        @ViewBag.name
+                    </a>
+                </li>
+                <li class="layui-nav-item"><a href="javascript:;" id="loginOut">退出</a></li>
+            </ul>
+        </div>
+
+        <div class="layui-side layui-bg-black">
+            <div class="layui-side-scroll">
+                <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+                <ul class="layui-nav layui-nav-tree" lay-filter="test" id="sideNav">
+                    <li class="layui-nav-item layui-this">
+                        <dl>
+                            <dd>
+                                <a href="javascript:;" data-url="/Home/Dashboard">首页</a>
+                            </dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;">渠道商管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;" data-url="/Order/List">旅行社下单列表</a></dd>
+                            <dd><a href="javascript:;" data-url="/Guide/List">导游列表</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;">用户管理</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;" data-url="/Home/UpdateUser">修改密码</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="layui-body" style="bottom:0px;">
+            <iframe data-frameid="0" scrolling="auto" frameborder="0" src="/Home/Dashboard" style="width:100%;height:99.5%;"></iframe>
+        </div>
+    </div>
+    <script src="~/JavaScript/jquery-1.8.3.min.js"></script>
+    <script src="~/JavaScript/layui/layui.js"></script>
+    <script>
+        //JavaScript代码区域
+        layui.use(['element', 'layer'], function () {
+            var $ = layui.jquery, element = layui.element;
+            //iframe自适应
+            $(window).on('resize', function () {
+                console.log("");
+                var $obj = $('#tabContainers');
+                $obj.height($(this).height() - 145);
+                $obj.find('iframe').each(function () {
+                    $(this).height($obj.height());
+                });
+            }).resize();
+            //给nav绑定事件
+            $('.layui-nav .layui-nav-item dd> a').each(function () {
+                var $obj = $(this);
+                var url = $obj.data('url'); //tab内容的地址
+                var title = $obj.children("label").html();
+                //获取设定的url
+                if (url !== undefined) {
+                    $obj.on('click', function () {
+                        $('#tabTitle label').html(title);
+                        $("iframe[data-frameid='0']").attr("src", url)//切换后刷新框架
+                    });
+                }
+            });
+
+            $("#loginOut").click(function () {
+                layer.open({
+                    content: '确认要退出登录吗？',
+                    btn: ['确定', '取消'],
+                    area: '360px',
+                    icon: 3,
+                    yes: function (index, layero) {
+                        loginOut();
+                    }
+                });
+
+            });
+
+            function loginOut() {
+                $.ajax({
+                    url: '/Login/LoginOut',
+                    type: 'post',
+                    dataType: "json",
+                    success: function (data, status) {
+                        if (data.success) {
+                            layer.msg("注销成功", { icon: 1 });
+                            location.href = "/Login/Index";
+                        } else {
+                            layer.msg(data.message, { icon: 2 });
+                        }
+                    },
+                    beforeSend: function () {
+                        layer.load("loading");
+                    },
+                    complete: function () {
+                        layer.closeAll('loading');
+                    }
+                });
+            }
+        })
+    </script>
+</body>
+</html>
+

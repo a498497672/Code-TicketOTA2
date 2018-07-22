@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+    Layout = "~/Views/_LayoutPage.cshtml";
+}
+
+<div class="layui-main-common">
+    <div style="width: 350px; margin-top:15px;">
+        <form class="layui-form" action="">
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-width">导游名称</label>
+                <div class="layui-input-block layui-input-block-width">
+                    <input type="text" name="Name" lay-verify="required" placeholder="导游名称" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-width">电话号码</label>
+                <div class="layui-input-block layui-input-block-width">
+                    <input type="text" name="Mobile" lay-verify="required" placeholder="电话号码" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-width">身份证号码</label>
+                <div class="layui-input-block layui-input-block-width">
+                    <input type="text" name="IdCard" lay-verify="required" placeholder="身份证号码" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label layui-form-label-width">导游类型</label>
+                <div class="layui-input-block layui-input-block-width">
+                    <select name="GuideType" lay-verify="required">
+                        <option value="1" selected>导游</option>
+                        <option value="2">司机</option>
+                    </select>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block layui-input-block-width">
+                    <button class="layui-btn" lay-submit="action" lay-filter="action">确定</button>
+                    <a class="layui-btn layui-btn-primary" id="closeLayer">取消</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    layui.use(['element', 'form', 'laydate'], function () {
+        var form = layui.form, element = layui.element, laydate = layui.laydate, $ = layui.$;
+        var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+
+        form.verify({
+            required: function (value, item) { //value：表单的值、item：表单的DOM对象
+                if (value == "" || value == undefined || value == null) {
+                    var errorMsg = $(item).attr("placeholder");
+                    if (errorMsg == "" || errorMsg == undefined || errorMsg == null) {
+                        errorMsg = "必填项";
+                    }
+                    return errorMsg + "不能为空";
+                }
+            }
+        });
+        //监听提交
+        form.on('submit(action)', function (data) {
+            $.ajax({
+                url: '/Guide/AddData',
+                data: data.field,
+                type: 'post',
+                dataType: "json",
+                success: function (data, status) {
+                    if (data.success) {
+                        parent.layer.msg('添加成功', { icon: 1 });
+                        parent.layer.close(index);
+                    } else {
+                        parent.layer.msg(data.message, { icon: 2 });
+                    }
+                },
+                beforeSend: function () {
+                    layer.load("loading");
+                },
+                complete: function () {
+                    layer.closeAll('loading');
+                }
+            });
+            return false;
+        });
+
+        $("#closeLayer").click(function () {
+            parent.layer.close(index);
+        });
+    });
+</script>
+

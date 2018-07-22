@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CA06D6A7-28D8-41E2-A3FE-5B42F4A20E64}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Ticket.TaskEngine.Application</RootNamespace>
+    <AssemblyName>Ticket.TaskEngine.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\MobileTicketService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\OrderIssuedsService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Enum\OrderAuditState.cs" />
+    <Compile Include="Enum\OrderDetailState.cs" />
+    <Compile Include="Model\OrderModel.cs" />
+    <Compile Include="Model\OtaOrderModel.cs" />
+    <Compile Include="Model\ResultData.cs" />
+    <Compile Include="Model\SellJson.cs" />
+    <Compile Include="Model\TicketJson.cs" />
+    <Compile Include="Service\OrderTravelNoticeFacadeService.cs" />
+    <Compile Include="Service\NoticeOrderConsumedFacadeService.cs" />
+    <Compile Include="Service\OrderFacadeService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\TicketFacadeService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FengjingSDK461\FengjingSDK461.csproj">
+      <Project>{d1695393-478f-4beb-b235-a617f83a90c7}</Project>
+      <Name>FengjingSDK461</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ticket.AdoNet\Ticket.AdoNet.csproj">
+      <Project>{f08ff5ad-9ad8-463f-8b15-eb1f0b1af1fb}</Project>
+      <Name>Ticket.AdoNet</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ticket.Core\Ticket.Core.csproj">
+      <Project>{a5d29c4d-1794-4abd-bc76-99655132ebf4}</Project>
+      <Name>Ticket.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ticket.Infrastructure.Ctrip\Ticket.Infrastructure.Ctrip.csproj">
+      <Project>{e2b73c86-74aa-4a5b-aff5-0c934a8a4ece}</Project>
+      <Name>Ticket.Infrastructure.Ctrip</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ticket.Infrastructure.TongCheng\Ticket.Infrastructure.TongCheng.csproj">
+      <Project>{9fce677c-2ca7-4aa6-bf83-96a92927a37a}</Project>
+      <Name>Ticket.Infrastructure.TongCheng</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ticket.Model\Ticket.Model.csproj">
+      <Project>{b525388f-7b94-405c-969f-a29d3e6b1067}</Project>
+      <Name>Ticket.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ticket.SqlSugar\Ticket.SqlSugar.csproj">
+      <Project>{99CAD451-B0FC-44E4-A1B5-BCEDADD5C1D1}</Project>
+      <Name>Ticket.SqlSugar</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ticket.Utility\Ticket.Utility.csproj">
+      <Project>{786eb7fc-ea4a-442e-9468-1140fc9a92cd}</Project>
+      <Name>Ticket.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Connected Services\MobileTicketService\MobileTicket.wsdl" />
+    <None Include="Connected Services\OrderIssuedsService\XJ_OrderIssueds.wsdl" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\MobileTicketService\" />
+    <WCFMetadataStorage Include="Connected Services\OrderIssuedsService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\OrderIssuedsService\XJ_OrderIssueds.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\OrderIssuedsService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\OrderIssuedsService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\OrderIssuedsService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MobileTicketService\MobileTicket.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MobileTicketService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MobileTicketService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\MobileTicketService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

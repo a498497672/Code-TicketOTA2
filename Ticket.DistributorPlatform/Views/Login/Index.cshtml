@@ -1,0 +1,124 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>商家管理系统</title>
+    <link href="~/JavaScript/layui/css/layui.css" rel="stylesheet" />
+    <link href="~/Content/login.css?v=1.4" rel="stylesheet" />
+</head>
+<body onload="loadTopWindow()">
+    <div class="login_box">
+        <div class="login_l_img"><img src="~/Images/login-img.png" /></div>
+        <div class="login">
+            <div class="login_logo"><a href="#"><img src="~/Images/login_logo.png" /></a></div>
+            <div class="login_name">
+                <p>旅行社后台管理系统</p>
+            </div>
+            <form class="layui-form" action="">
+                <input id="UserAccount" name="username" type="text" lay-verify="required" placeholder="用户名">
+                <input id="UserPassword" name="password" type="password" lay-verify="required" placeholder="密码" />
+                <input class="login_code" name="code" type="text" lay-verify="required" placeholder="验证码">
+                <span>
+                    <img class="login_imgCode" id="checkCodeImg" title="换一张" alt="验证码">
+                    <a class="login_imgCode_font" href="javascript:;" onclick="getCodeImg()">换一张</a>
+                </span>
+                <div class="layui-form-item">
+                    <input id="remebers" type="checkbox" name="remebers" title="记住用户名和密码" lay-skin="primary" value="true" >
+                </div>
+                <input value="登录" style="width:100%;" type="button" lay-submit lay-filter="formDemo">
+            </form>
+        </div>
+        <div class="copyright">深圳市风景智联科技有限公司 版权所有©2016-2018 ICP备案号：粤ICP备15041511号</div>
+    </div>
+    <script src="~/JavaScript/jquery-1.8.3.min.js"></script>
+    <script src="~/JavaScript/layui/layui.js"></script>
+    <script type="text/javascript">
+        //写cookies
+        function setCookie(name, value) {
+            var Days = 30;
+            var exp = new Date();
+            exp.setTime(exp.getTime() + Days * 24 * 60 * 60 * 1000);
+            document.cookie = name + "=" + escape(value) + ";expires=" + exp.toGMTString();
+        }
+        //读取cookies 
+        function getCookie(name) {
+            var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+            if (arr = document.cookie.match(reg)) return unescape(arr[2]);
+            else return null;
+        }
+        //删除cookies 
+        function delCookie(name) {
+            var exp = new Date();
+            exp.setTime(exp.getTime() - 1);
+            var cval = getCookie(name);
+            if (cval != null) document.cookie = name + "=" + cval + ";expires=" + exp.toGMTString();
+        }
+
+        layui.use(['element', 'form'], function () {
+            var form = layui.form, $ = layui.$;
+            getCodeImg();
+            $("#checkCodeImg").on('click', function () {
+                getCodeImg();
+            });
+            if (getCookie("uname") != null)
+            {
+                $('#remebers').attr("checked", "checked");
+                $('#UserAccount').val(getCookie("uname"));
+                $('#UserPassword').val(getCookie("upwd"));
+                form.render('checkbox');
+            }
+            function setUserNameAndPassWord() {
+                if ($('#remebers').attr("checked")) {
+                    console.log(true);
+                    setCookie("uname", $("#UserAccount").val(), 60);
+                    setCookie("upwd", $("#UserPassword").val(), 60);
+                }
+                else {
+                    console.log(false);
+                    delCookie("uname");
+                    delCookie("upwd");
+                }
+            }
+            //监听提交
+            form.on('submit(formDemo)', function (data) {
+                $.ajax({
+                    url: '/Login/PostLogin',
+                    data: data.field,
+                    type: 'post',
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.success) {
+                            setUserNameAndPassWord();
+                            layer.msg("登录成功", { icon: 1 });
+                            location.href = "/Home/Index";
+                        } else {
+                            layer.msg(data.message, { icon: 2 });
+                        }
+                    },
+                    beforeSend: function () {
+                        layer.load("loading");
+                    },
+                    complete: function () {
+                        layer.closeAll('loading');
+                    }
+                });
+                return false;
+            });
+        });
+        function loadTopWindow() {
+            if (window.top != null && window.top.document.URL != document.URL) {
+                var urlStr = document.URL;
+                window.top.location = urlStr;
+            }
+        }
+        function getCodeImg() {
+            document.getElementById("checkCodeImg").src = "/Login/GetCheckCode?a=" + (new Date().getTime());
+        }
+    </script>
+</body>
+</html>

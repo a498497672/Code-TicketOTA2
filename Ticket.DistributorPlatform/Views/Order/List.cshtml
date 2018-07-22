@@ -1,0 +1,234 @@
+﻿
+@{
+    ViewBag.Title = "订单列表";
+    Layout = "~/Views/_LayoutPage.cshtml";
+}
+
+<div class="layui-main-common">
+    <div class="layui-form-item">
+        <blockquote class="layui-elem-quote">渠道商管理  >  旅行社下单列表</blockquote>
+    </div>
+    <div class="queryTable">
+        <form class="layui-form" action="" id="queryForm">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">订 单 号</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="orderNo" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">取 票 人</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="linkman" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">取票人电话</label>
+                    <div class="layui-input-inline">
+                        <input type="text" name="mobile" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">审核状态</label>
+                    <div class="layui-input-inline">
+                        <select name="auditStatus">
+                            <option value="">全部</option>
+                            <option value="1">待审核</option>
+                            <option value="2">已审核</option>
+                            <option value="3">审核驳回</option>
+                            <option value="4">取消申请中</option>
+                            <option value="5">订单取消</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">订单状态</label>
+                    <div class="layui-input-inline">
+                        <select name="orderStatus">
+                            <option value="">全部</option>
+                            <option value="1">未付款</option>
+                            <option value="2">已付款</option>
+                            <option value="3">已退款</option>
+                            <option value="4">已取纸质票</option>
+                            <option value="5">线下已检</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="layui-inline">
+                    <label class="layui-form-label">游玩时间</label>
+                    <div class="layui-input-inline">
+                        <input id="validityDate" type="text" name="ValidityDate" lay-verify="date" autocomplete="off" class="layui-input">
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">&nbsp;</label>
+                    <a class="layui-btn" id="btnQuery"><i class="layui-icon">&#xe615;</i>搜索</a>
+                    <a class="layui-btn layui-btn-normal" id="btnAdd"><i class="layui-icon">&#xe608;</i>新增订单</a>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <table class="layui-hide" id="LAY_table_list" lay-filter="tableList"></table>
+</div>
+<script type="text/html" id="barorderStatus">
+    {{#if(d.orderStatus==1){}}
+    <span style="color:#FF5722">{{d.orderStatusName}}</span>
+    {{#  } else if(d.orderStatus==2){ }}
+    <span style="color:#009688">{{d.orderStatusName}}</span>
+    {{#  } else if(d.orderStatus==3){ }}
+    <span style="color:#FFB800">{{d.orderStatusName}}</span>
+    {{#  } else if(d.orderStatus==4){ }}
+    <span style="color:#0094ff">{{d.orderStatusName}}</span>
+    {{#  } else if(d.orderStatus==5){ }}
+    <span style="color:#b200ff">{{d.orderStatusName}}</span>
+    {{#  } }}
+</script>
+<script type="text/html" id="barauditStatus">
+    {{#if(d.auditStatus==1){}}
+    <span style="color:#FF5722">{{d.auditStatusName}}</span>
+    {{#  } else if(d.auditStatus==2){ }}
+    <span style="color:#009688">{{d.auditStatusName}}</span>
+    {{#  } else if(d.auditStatus==3){ }}
+    <span style="color:#FFB800">{{d.auditStatusName}}</span>
+    {{#  } else if(d.auditStatus==4){ }}
+    <span style="color:#4cff00">{{d.auditStatusName}}</span>
+    {{#  } else if(d.auditStatus==5){ }}
+    <span style="color:#2F4056">{{d.auditStatusName}}</span>
+    {{#  } }}
+</script>
+<script type="text/html" id="barAction">
+    <a class="layui-btn layui-btn-xs" lay-event="detail">查看</a>
+    {{#if(d.orderStatus == 1 && (d.auditStatus==1||d.auditStatus==3||d.auditStatus==5)){}}
+    <a class="layui-btn layui-btn-xs layui-btn-normal" lay-event="update">编辑</a>
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="delete">删除</a>
+    {{#  } }}
+</script>
+<script>
+    layui.use(['table', 'laydate', 'layer'], function () {
+        var table = layui.table, laydate = layui.laydate, layer = layui.layer;
+        //方法级渲染
+        table.render({
+            elem: '#LAY_table_list'
+            , url: '/Order/ListData/'
+            , cols: [[
+                { field: 'orderNo', title: '订单号', width: 180 }
+                , { field: 'linkman', title: '取票人', width: 80 }
+                , { field: 'mobile', title: '取票人电话', width: 120 }
+                , { field: 'bookCount', title: '票数', width: 70 }
+                , { field: 'totalAmount', title: '金额(￥)', width: 90 }
+                , { field: 'auditStatusName', title: '审核', width: 100, toolbar: '#barauditStatus' }
+                , { field: 'orderStatusName', title: '订单状态', width: 100, toolbar: '#barorderStatus' }
+                , { field: 'validityDate', title: '游玩时间', width: 105 }
+                , { field: 'placeOrderName', title: '下单人', width: 80 }
+                , { field: 'createTime', title: '下单时间', width: 160 }               
+                , { title: '操作', fixed: 'right', width: 155, toolbar: '#barAction' }
+            ]]
+            , id: 'tableReload'
+            , page: true
+            , response: {
+                statusName: 'success' //数据状态的字段名称，默认：code
+                , statusCode: true //成功的状态码，默认：0
+                , msgName: 'message' //状态信息的字段名称，默认：msg
+                , countName: 'count' //数据总数的字段名称，默认：count
+                , dataName: 'data' //数据列表的字段名称，默认：data
+            }
+        });
+
+        var $ = layui.$, active = {
+            reload: function () {
+                var serializeObj = {};
+                $($("#queryForm").serializeArray()).each(function () {
+                    serializeObj[this.name] = this.value;
+                });
+                //执行重载
+                table.reload('tableReload', {
+                    page: {
+                        curr: 1 //重新从第 1 页开始
+                    }
+                    , where: serializeObj
+                });
+            }
+        };
+
+        //监听工具条 (注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值")
+        table.on('tool(tableList)', function (obj) {
+            var data = obj.data; //获得当前行数据
+            var layEvent = obj.event;
+            if (layEvent === 'detail') {
+                parent.layer.open({
+                    type: 2,
+                    title: "查看",
+                    area: ['700px', '550px'],
+                    fixed: false,
+                    content: '/Order/Detail?id=' + data.id,
+                    end: function () {
+                        active.reload();
+                    }
+                });
+            } else if (layEvent === 'update') {
+                parent.layer.open({
+                    type: 2,
+                    title: "编辑",
+                    area: ['800px', '600px'],
+                    fixed: false,
+                    content: '/Order/update?id=' + data.id,
+                    end: function () {
+                        active.reload();
+                    }
+                });
+            } else if (layEvent === 'delete') {
+                layer.confirm('确认要删除使用吗?', function (index) {
+                    $.ajax({
+                        url: '/Order/Delete?id=' + data.id,
+                        type: 'post',
+                        dataType: "json",
+                        success: function (data, status) {
+                            layer.close(index);
+                            if (data.success) {
+                                active.reload();
+                                parent.layer.msg(data.message, { icon: 1 });
+                            } else {
+                                parent.layer.msg(data.message, { icon: 2 });
+                            }
+                        },
+                        beforeSend: function () {
+                            layer.load("loading");
+                        },
+                        complete: function () {
+                            layer.closeAll('loading');
+                        }
+                    });
+                });
+            }
+        });
+
+        $('#btnQuery').on('click', function () {
+            active.reload();
+        });
+
+        $('#btnAdd').on('click', function () {
+            parent.layer.open({
+                type: 2,
+                title: "新增订单",
+                area: ['800px', '605px'],
+                fixed: false,
+                content: '/Order/Add',
+                end: function () {
+                    active.reload();
+                }
+            });
+        });
+
+        //日期有效范围
+        var start = laydate.render({
+            elem: '#validityDate',
+        });
+    });
+</script>
+

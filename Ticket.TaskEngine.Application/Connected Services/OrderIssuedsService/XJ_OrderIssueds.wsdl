@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderIssuedLine">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="merchantCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TimeStamp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="signature" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="str1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="str2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OrderType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetOrderIssuedLineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetOrderIssuedLineResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateIssuedLine">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OrderNo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ECode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Signature" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TimeStamp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="str1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="str2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OrderType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateIssuedLineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateIssuedLineResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LineSellUpdate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SellJSON" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Signature" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="TimeStamp" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="str1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="str2" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="OrderType" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LineSellUpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LineSellUpdateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderIssuedLineSoapIn">
+    <wsdl:part name="parameters" element="tns:GetOrderIssuedLine" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderIssuedLineSoapOut">
+    <wsdl:part name="parameters" element="tns:GetOrderIssuedLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateIssuedLineSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateIssuedLine" />
+  </wsdl:message>
+  <wsdl:message name="UpdateIssuedLineSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateIssuedLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="LineSellUpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:LineSellUpdate" />
+  </wsdl:message>
+  <wsdl:message name="LineSellUpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:LineSellUpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpGetIn" />
+  <wsdl:message name="HelloWorldHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderIssuedLineHttpGetIn">
+    <wsdl:part name="merchantCode" type="s:string" />
+    <wsdl:part name="TimeStamp" type="s:string" />
+    <wsdl:part name="signature" type="s:string" />
+    <wsdl:part name="str1" type="s:string" />
+    <wsdl:part name="str2" type="s:string" />
+    <wsdl:part name="OrderType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderIssuedLineHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateIssuedLineHttpGetIn">
+    <wsdl:part name="MerchantCode" type="s:string" />
+    <wsdl:part name="OrderNo" type="s:string" />
+    <wsdl:part name="ECode" type="s:string" />
+    <wsdl:part name="Signature" type="s:string" />
+    <wsdl:part name="TimeStamp" type="s:string" />
+    <wsdl:part name="str1" type="s:string" />
+    <wsdl:part name="str2" type="s:string" />
+    <wsdl:part name="OrderType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateIssuedLineHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LineSellUpdateHttpGetIn">
+    <wsdl:part name="MerchantCode" type="s:string" />
+    <wsdl:part name="SellJSON" type="s:string" />
+    <wsdl:part name="Signature" type="s:string" />
+    <wsdl:part name="TimeStamp" type="s:string" />
+    <wsdl:part name="str1" type="s:string" />
+    <wsdl:part name="str2" type="s:string" />
+    <wsdl:part name="OrderType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LineSellUpdateHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldHttpPostIn" />
+  <wsdl:message name="HelloWorldHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderIssuedLineHttpPostIn">
+    <wsdl:part name="merchantCode" type="s:string" />
+    <wsdl:part name="TimeStamp" type="s:string" />
+    <wsdl:part name="signature" type="s:string" />
+    <wsdl:part name="str1" type="s:string" />
+    <wsdl:part name="str2" type="s:string" />
+    <wsdl:part name="OrderType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetOrderIssuedLineHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateIssuedLineHttpPostIn">
+    <wsdl:part name="MerchantCode" type="s:string" />
+    <wsdl:part name="OrderNo" type="s:string" />
+    <wsdl:part name="ECode" type="s:string" />
+    <wsdl:part name="Signature" type="s:string" />
+    <wsdl:part name="TimeStamp" type="s:string" />
+    <wsdl:part name="str1" type="s:string" />
+    <wsdl:part name="str2" type="s:string" />
+    <wsdl:part name="OrderType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateIssuedLineHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LineSellUpdateHttpPostIn">
+    <wsdl:part name="MerchantCode" type="s:string" />
+    <wsdl:part name="SellJSON" type="s:string" />
+    <wsdl:part name="Signature" type="s:string" />
+    <wsdl:part name="TimeStamp" type="s:string" />
+    <wsdl:part name="str1" type="s:string" />
+    <wsdl:part name="str2" type="s:string" />
+    <wsdl:part name="OrderType" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LineSellUpdateHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="XJ_OrderIssuedsSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderIssuedLine">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">下发订单接口</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderIssuedLineSoapIn" />
+      <wsdl:output message="tns:GetOrderIssuedLineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIssuedLine">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改下发订单状态</wsdl:documentation>
+      <wsdl:input message="tns:UpdateIssuedLineSoapIn" />
+      <wsdl:output message="tns:UpdateIssuedLineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LineSellUpdate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">B2B带团到场支付订单下发后售卖回传</wsdl:documentation>
+      <wsdl:input message="tns:LineSellUpdateSoapIn" />
+      <wsdl:output message="tns:LineSellUpdateSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="XJ_OrderIssuedsHttpGet">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpGetIn" />
+      <wsdl:output message="tns:HelloWorldHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderIssuedLine">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">下发订单接口</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderIssuedLineHttpGetIn" />
+      <wsdl:output message="tns:GetOrderIssuedLineHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIssuedLine">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改下发订单状态</wsdl:documentation>
+      <wsdl:input message="tns:UpdateIssuedLineHttpGetIn" />
+      <wsdl:output message="tns:UpdateIssuedLineHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LineSellUpdate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">B2B带团到场支付订单下发后售卖回传</wsdl:documentation>
+      <wsdl:input message="tns:LineSellUpdateHttpGetIn" />
+      <wsdl:output message="tns:LineSellUpdateHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="XJ_OrderIssuedsHttpPost">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldHttpPostIn" />
+      <wsdl:output message="tns:HelloWorldHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderIssuedLine">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">下发订单接口</wsdl:documentation>
+      <wsdl:input message="tns:GetOrderIssuedLineHttpPostIn" />
+      <wsdl:output message="tns:GetOrderIssuedLineHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIssuedLine">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">修改下发订单状态</wsdl:documentation>
+      <wsdl:input message="tns:UpdateIssuedLineHttpPostIn" />
+      <wsdl:output message="tns:UpdateIssuedLineHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LineSellUpdate">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">B2B带团到场支付订单下发后售卖回传</wsdl:documentation>
+      <wsdl:input message="tns:LineSellUpdateHttpPostIn" />
+      <wsdl:output message="tns:LineSellUpdateHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="XJ_OrderIssuedsSoap" type="tns:XJ_OrderIssuedsSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderIssuedLine">
+      <soap:operation soapAction="http://tempuri.org/GetOrderIssuedLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIssuedLine">
+      <soap:operation soapAction="http://tempuri.org/UpdateIssuedLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LineSellUpdate">
+      <soap:operation soapAction="http://tempuri.org/LineSellUpdate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="XJ_OrderIssuedsSoap12" type="tns:XJ_OrderIssuedsSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderIssuedLine">
+      <soap12:operation soapAction="http://tempuri.org/GetOrderIssuedLine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIssuedLine">
+      <soap12:operation soapAction="http://tempuri.org/UpdateIssuedLine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LineSellUpdate">
+      <soap12:operation soapAction="http://tempuri.org/LineSellUpdate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="XJ_OrderIssuedsHttpGet" type="tns:XJ_OrderIssuedsHttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderIssuedLine">
+      <http:operation location="/GetOrderIssuedLine" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIssuedLine">
+      <http:operation location="/UpdateIssuedLine" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LineSellUpdate">
+      <http:operation location="/LineSellUpdate" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="XJ_OrderIssuedsHttpPost" type="tns:XJ_OrderIssuedsHttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="HelloWorld">
+      <http:operation location="/HelloWorld" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrderIssuedLine">
+      <http:operation location="/GetOrderIssuedLine" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateIssuedLine">
+      <http:operation location="/UpdateIssuedLine" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LineSellUpdate">
+      <http:operation location="/LineSellUpdate" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="XJ_OrderIssueds">
+    <wsdl:port name="XJ_OrderIssuedsSoap" binding="tns:XJ_OrderIssuedsSoap">
+      <soap:address location="http://112.74.131.57:10003/XJ_OrderIssueds.asmx" />
+    </wsdl:port>
+    <wsdl:port name="XJ_OrderIssuedsSoap12" binding="tns:XJ_OrderIssuedsSoap12">
+      <soap12:address location="http://112.74.131.57:10003/XJ_OrderIssueds.asmx" />
+    </wsdl:port>
+    <wsdl:port name="XJ_OrderIssuedsHttpGet" binding="tns:XJ_OrderIssuedsHttpGet">
+      <http:address location="http://112.74.131.57:10003/XJ_OrderIssueds.asmx" />
+    </wsdl:port>
+    <wsdl:port name="XJ_OrderIssuedsHttpPost" binding="tns:XJ_OrderIssuedsHttpPost">
+      <http:address location="http://112.74.131.57:10003/XJ_OrderIssueds.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

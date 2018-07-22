@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://112.74.131.57:10003/MobileTicket.asmx?wsdl" docRef="http://112.74.131.57:10003/MobileTicket.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://112.74.131.57:10003/MobileTicket.asmx" xmlns:q1="http://tempuri.org/" binding="q1:MobileTicketSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://112.74.131.57:10003/MobileTicket.asmx" xmlns:q2="http://tempuri.org/" binding="q2:MobileTicketSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

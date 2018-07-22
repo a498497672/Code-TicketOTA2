@@ -1,0 +1,19 @@
+﻿.layui-form-label-width {
+    width: 100px !important;
+}
+
+.layui-input-block-width {
+    margin-left: 130px !important;
+}
+
+.layui-input-inline-width {
+    width: 230px !important;
+}
+
+.layui-main-common {
+    padding: 5px 10px 0 10px;
+}
+
+.labelRed {
+    color: red;
+}

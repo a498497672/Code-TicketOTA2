@@ -1,0 +1,110 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>门票列表</title>
+    <link href="~/JavaScript/layui/css/layui.css" rel="stylesheet" />
+    <link href="~/Content/common.css" rel="stylesheet" />
+</head>
+<body class="layui-layout-body">
+
+    <div class="layui-main-common">
+        <div class="queryTable">
+            <form class="layui-form" action="" id="queryForm">
+                <div class="layui-form-item">
+                    <input type="hidden" name="PlayDate" id="PlayDate" value="@ViewBag.PlayDate" />
+                    <div class="layui-inline">
+                        <label class="layui-form-label">产品名称</label>
+                        <div class="layui-input-inline">
+                            <input type="text" name="ticketName" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-inline">
+                        <a class="layui-btn" id="btnQuery"><i class="layui-icon">&#xe615;</i>搜索</a>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <table class="layui-hide" id="LAY_table_list" lay-filter="tableList"></table>
+        <div style="text-align:center">
+            <a class="layui-btn layui-btn-normal" id="btnSelect">
+                <i class="layui-icon">&#xe608;</i>选择
+            </a>
+            <a class="layui-btn layui-btn-primary" id="closeLayer">
+                <i class="layui-icon">&#xe669;</i>取消
+            </a>
+        </div>
+    </div>
+    <script src="~/JavaScript/jquery-1.8.3.min.js"></script>
+    <script src="~/JavaScript/layui/layui.js"></script>
+    <script src="~/JavaScript/common.js"></script>
+    <script>
+        layui.use(['table', 'laydate'], function () {
+            var table = layui.table, laydate = layui.laydate, $ = layui.$;
+            //方法级渲染
+            table.render({
+                elem: '#LAY_table_list'
+                , url: '/Ticket/ListData/'
+                , cols: [[
+                    { title: '全选', width: 60, type: "checkbox" }
+                    , { field: 'ticketId', title: '序号', width: 70 }
+                    , { field: 'ticketName', title: '产品名称', width: 150 }
+                    , { field: 'price', title: '售卖价格', width: 90 }
+                    , { title: '可游玩天数', width: 100, templet: '<div>1</div>' }
+                ]]
+                , id: 'tableReload'
+                , page: true
+                , height: 300
+                , response: {
+                    statusName: 'success' //数据状态的字段名称，默认：code
+                    , statusCode: true //成功的状态码，默认：0
+                    , msgName: 'message' //状态信息的字段名称，默认：msg
+                    , countName: 'count' //数据总数的字段名称，默认：count
+                    , dataName: 'data' //数据列表的字段名称，默认：data
+                },
+                where: { PlayDate: $("#PlayDate").val() }
+            });
+
+            var active = {
+                reload: function () {
+                    var serializeObj = {};
+                    $($("#queryForm").serializeArray()).each(function () {
+                        serializeObj[this.name] = this.value;
+                    });
+                    //执行重载
+                    table.reload('tableReload', {
+                        page: {
+                            curr: 1 //重新从第 1 页开始
+                        }
+                        , where: serializeObj
+                    });
+                }
+            };
+
+            var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+
+            $('#btnQuery').on('click', function () {
+                active.reload();
+            });
+
+            $('#btnSelect').on('click', function () {
+                var checkStatus = table.checkStatus('tableReload');
+                parent.window.SelectTicketItem(checkStatus.data);
+                parent.layer.close(index);
+            });
+            $("#closeLayer").click(function () {
+                parent.layer.close(index);
+            });
+        });
+    </script>
+
+
+</body>
+</html>

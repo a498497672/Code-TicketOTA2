@@ -1,0 +1,209 @@
+﻿@model Ticket.Model.Model.TravelAgency.OrderDetailViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>详情</title>
+    <link href="~/JavaScript/layui/css/layui.css" rel="stylesheet" />
+    <link href="~/Content/common.css?v=1.1" rel="stylesheet" />
+</head>
+<body>
+    <div class="layui-main-common">
+        <div style=" margin-top:15px;">
+            <input type="hidden" id="orderId" name="id" value="@Model.Id" />
+            <div class="layui-form-item">
+                <label class="layui-form-label">游玩日期:</label>
+                <div class="layui-input-inline">
+                    <div class="layui-form-mid">@Model.ValidityDate.ToString("yyyy-MM-dd")</div>
+                </div>
+                <label class="layui-form-label">下单人:</label>
+                <div class="layui-input-inline">
+                    <div class="layui-form-mid ">@Model.PlaceOrderName</div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block" style="margin: 0 35px;">
+                    <fieldset class="layui-elem-field">
+                        <legend>
+                            <span style="font-size:13px;color:forestgreen;font-weight: 400;">购买产品</span>
+                        </legend>
+                        <div class="layui-field-box">
+                            <table lay-filter="tableList">
+                                <thead>
+                                    <tr>
+                                        <th lay-data="{field:'ticketName', width:160}">产品名称</th>
+                                        <th lay-data="{field:'salePrice', width:120}">单价(￥)</th>
+                                        <th lay-data="{field:'bookCount', width:120}">数量(人)</th>
+                                        <th lay-data="{field:'totalAmount', width:120}">总额(￥)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (Ticket.Model.Model.TravelAgency.TicketItemModel row in Model.TicketItem)
+                                    {
+                                        <tr>
+                                            <td>@row.TicketName</td>
+                                            <td>@Math.Round(row.Price, 2)</td>
+                                            <td>@row.BookCount</td>
+                                            <td>@Math.Round(row.TotalAmount, 2)</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <div class="layui-input-inline" style="margin:15px 5px; width:400px;">
+                                总票数: @Model.TicketItem.Sum(a => a.BookCount) 张&nbsp;&nbsp;&nbsp;&nbsp;
+                                总金额: @Math.Round(Model.TicketItem.Sum(a => a.BookCount * a.Price), 2) 元
+                            </div>
+                        </div>
+                    </fieldset>
+
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block" style="margin: 0 35px;">
+                    <input type="hidden" id="TicketItem" name="TicketItem" />
+                    <fieldset class="layui-elem-field">
+                        <legend>
+                            <span style="font-size:13px;color:forestgreen;font-weight: 400;">取票人信息</span>
+                        </legend>
+                        <div class="layui-field-box">
+                            <div class="layui-inline">
+                                <label class="layui-form-label" style="width:35px;">姓名:</label>
+                                <div class="layui-input-inline" style="width:60px;">
+                                    <div class="layui-form-mid ">@Model.Linkman</div>
+                                </div>
+                                <label class="layui-form-label" style="width:40px;">电话:</label>
+                                <div class="layui-input-inline" style="width:90px;">
+                                    <div class="layui-form-mid ">@Model.Mobile</div>
+                                </div>
+                                <label class="layui-form-label">身份证:</label>
+                                <div class="layui-input-inline" style="width:120px;">
+                                    <div class="layui-form-mid ">@Model.IdCard</div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block" style="margin: 0 35px;">
+                    <input type="hidden" id="TicketItem" name="TicketItem" />
+                    <fieldset class="layui-elem-field">
+                        <legend>
+                            <span style="font-size:13px;color:forestgreen;font-weight: 400;">备注</span>
+                        </legend>
+                        <div class="layui-field-box">
+                            <div class="layui-inline" style="margin-left: 15px;">
+                                @Model.Remark
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+            @if (Model.AuditStatus == 3)
+            {
+                <div class="layui-form-item">
+                    <div class="layui-input-block" style="margin: 0 35px;">
+                        <input type="hidden" id="TicketItem" name="TicketItem" />
+                        <fieldset class="layui-elem-field">
+                            <legend>
+                                <span style="font-size:13px;color:forestgreen;font-weight: 400;">驳回信息</span>
+                            </legend>
+                            <div class="layui-field-box">
+                                <div class="layui-form-item" style="margin-bottom: 0px;">
+                                    <label class="layui-form-label" style="width:60px;">驳回时间:</label>
+                                    <div class="layui-input-block">
+                                        <div class="layui-form-mid">@Model.RejectTime.Value.ToString("yyyy-MM-dd HH:mm:ss")</div>
+                                    </div>
+                                </div>
+                                <div class="layui-form-item" style="margin-bottom: 0px;">
+                                    <label class="layui-form-label" style="width:60px;">驳回原因:</label>
+                                    <div class="layui-input-block">
+                                        <div class="layui-form-mid ">@Model.RejectReason  </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            }
+            <div class="layui-form-item">
+                <div style="text-align:center;">
+                    @if (Model.OrderStatus == 1 && Model.AuditStatus == 2)
+                    {
+                        <button class="layui-btn" id="cancel">申请取消</button>
+                    }
+                    <a class="layui-btn layui-btn-primary" id="closeLayer">取消</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/JavaScript/jquery-1.8.3.min.js"></script>
+    <script src="~/JavaScript/layui/layui.js"></script>
+    <script src="~/JavaScript/common.js"></script>
+    <script>
+        var selectTicketList = [];
+        function SelectTicketItem(data) {
+            selectTicketList = data;
+        }
+        function SelectGuide(data) {
+            $("#name").val(data.name);
+            $("#mobile").val(data.mobile);
+            $("#idCard").val(data.idCard);
+        }
+        layui.use(['table', 'element', 'form', 'laydate', 'upload'], function () {
+            var table = layui.table, form = layui.form, element = layui.element, laydate = layui.laydate, $ = layui.$;
+
+            //转换静态表格
+            table.init('tableList', {
+                page: false
+            });
+
+            var index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+
+            $("#closeLayer").click(function () {
+                parent.layer.close(index);
+            });
+
+            $("#cancel").click(function () {
+                parent.layer.open({
+                    content: '确定要提出取消这笔订单申请吗?',
+                    btn: ['确定', '取消'],
+                    area: '360px',
+                    icon: 3,
+                    yes: function (index, layero) {
+                        cancel();
+                    }
+                });
+            });
+
+            function cancel() {
+                $.ajax({
+                    url: '/Order/Cancel?id=' + $("#orderId").val(),
+                    type: 'post',
+                    dataType: "json",
+                    success: function (data, status) {
+                        parent.layer.close(index);
+                        if (data.success) {
+                            parent.layer.msg(data.message, { icon: 1 });
+                        } else {
+                            parent.layer.msg(data.message, { icon: 2 });
+                        }
+                    },
+                    beforeSend: function () {
+                        layer.load("loading");
+                    },
+                    complete: function () {
+                        layer.closeAll('loading');
+                    }
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
